@@ -1,5 +1,5 @@
 <div align="center">
-    <h2><b>University of León | Master's in Robotics and Artificial Intelligence | Hugo Díaz</b></h2>
+    <h2><b>University of León | Master's in Robotics and AI | Hugo Díaz</b></h2>
     <h1><b>Home Robot: A ROS 2 Jazzy package for entry-level robotics demonstrations on TB3</b></h1>
 </div>
 
