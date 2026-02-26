@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="turtlebot3_burger" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Minimal kinematic tree for TF publishing (no visuals) -->
+  <link name="odom"/>
+  <link name="base_footprint"/>
+  <link name="base_link"/>
+  <link name="base_scan"/>
+
+  <!-- map -> odom is handled separately (static TF), so only odom->base_footprint here -->
+  <joint name="odom_to_base_footprint" type="fixed">
+    <parent link="odom"/>
+    <child link="base_footprint"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="base_footprint_to_base_link" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0.01" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="base_link_to_base_scan" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_scan"/>
+    <origin xyz="0 0 0.07" rpy="0 0 0"/>
+  </joint>
+</robot>

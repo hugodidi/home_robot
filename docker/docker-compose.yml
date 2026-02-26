@@ -1,0 +1,30 @@
+services:
+  home_robot:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: home_robot:latest
+    container_name: home_robot_sim
+    privileged: true
+    environment:
+      - VNC_PASSWORD=roser
+      - PROJECT_ROOT=/home/ubuntu/home_robot
+      - PULSE_SERVER=unix:/run/user/1000/pulse/native
+      - PULSE_COOKIE=/home/ubuntu/.pulse-cookie
+    ports:
+      - "5901:5901" # VNC Port
+      - "6080:80" # noVNC Port (Browser)
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /dev/snd:/dev/snd # Microphone and Speakers
+      - /dev:/dev # Access to Serial/USB devices
+      - /run/user/1000/pulse:/run/user/1000/pulse # PulseAudio (Sound)
+      - /home/hugo/.config/pulse/cookie:/home/ubuntu/.pulse-cookie # PulseAudio Cookie
+      # Mount the workspace but isolate build/install/log using anonymous volumes
+      - ../ros2_ws:/home/ubuntu/home_robot/ros2_ws
+      - /home/ubuntu/home_robot/ros2_ws/build
+      - /home/ubuntu/home_robot/ros2_ws/install
+      - /home/ubuntu/home_robot/ros2_ws/log
+    stdin_open: true
+    tty: true
+    command: bash

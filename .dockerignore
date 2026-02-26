@@ -1,0 +1,9 @@
+.git
+.venv
+**/build/
+**/install/
+**/log/
+voice_models/
+**/*.pyc
+.vscode
+.antigravity

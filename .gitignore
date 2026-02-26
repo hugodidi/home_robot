@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+
+# ROS 2 workspace artifacts (also in ros2_ws/.gitignore)
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Voice models (large files - download separately)
+voice_models/piper/*
+!voice_models/piper/.gitkeep
+voice_models/vosk/*
+!voice_models/vosk/.gitkeep
+
+.venv/
+__pycache__/
+.vscode/
+.idea/
+
+build/
+install/
+log/

@@ -1,0 +1,32 @@
+slam_toolbox:
+  ros__parameters:
+    # Configuración de frames
+    odom_frame: odom
+    # Match the child_frame_id coming from /odom (Gazebo bridge publishes base_link)
+    base_frame: base_link
+    map_frame: map
+
+    # Asegura que se publique el TF map->odom
+    publish_tf: true
+    
+    # Tiempo de simulación
+    use_sim_time: True
+    
+    # Modo de operación
+    mode: mapping
+    
+    # Topic del laser
+    scan_topic: /scan
+
+    # Parámetros de sincronización y queue (para evitar "queue is full")
+    transform_timeout: 1.0
+    transform_publish_period: 0.05
+    map_update_interval: 1.0
+    minimum_time_interval: 0.1
+
+    # Aumentar tamaño de cola del message filter
+    scan_queue_size: 20
+    scan_buffer_size: 20
+    
+    tf_buffer_duration: 30.
+    stack_size_to_use: 40000000
