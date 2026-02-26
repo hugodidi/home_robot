@@ -8,7 +8,7 @@ The following images show the schematic and the assembly of the hardware interfa
 
 The hardware is composed of:
 
-- Arduino Uno
+- Arduino Nano
 - 8x8 DotMatrix (With MAX7219 driver)
 - Buzzer (Passive buzzer)
 - B103 potentiometer (10k ohm)
