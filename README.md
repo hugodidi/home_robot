@@ -42,7 +42,8 @@ This package includes:
     ```bash
     ros2 launch home_robot main_nav.launch.py use_slam:=true
     ```
-
+    Wait until the costmaps and navigation stack are loaded. You should see a blue message saying "Manage nodes are active" to know that the robot is ready to navigate.
+    
 4.  **Voice Control**:
     In a new terminal inside the container:
     ```bash
@@ -50,7 +51,7 @@ This package includes:
     ```
 
 > [!TIP]
-> If you encounter environment or audio issues, we provide optimized launch scripts in the `scripts/` folder (e.g., `./scripts/launch_voice.sh`). These scripts handle environment sourcing and cleanup automatically for a "clean start".
+> If you encounter **process issues when relaunching the simulation**, we provide optimized launch scripts in the `scripts/` folder (e.g., `./scripts/launch_navigation.sh`, `./scripts/launch_voice.sh`). These scripts handle environment sourcing and cleanup automatically for a "clean start". Refer to the [commands documentation](./docs/commands.md) for more details.
 
 ## Hardware (Arduino)
 
@@ -60,6 +61,8 @@ If you have the physical [Arduino hardware](docs/hardware-components.md), just p
 ros2 run home_robot lidar_grid_node --port /dev/{your_arduino_port}
 ```
 
+> [!TIP]
+> You can check the active usb ports with the command `ls /dev/tty*` or `ls /dev/ttyACM*`.
 
 # Available Commands   
 

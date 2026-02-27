@@ -38,11 +38,19 @@ ros2 launch home_robot main_nav.launch.py
 ros2 launch home_robot main_nav.launch.py use_slam:=true
 
 # Use the provided launch script for nav2 and rviz cleanup if needed
-./scripts/launch_navigation.sh
+./scripts/launch_navigation.sh --slam
 ```
 
 > [!TIP]
 > This launch includes: Gazebo simulation, Nav2 stack, SLAM (if enabled), RViz2 visualization with pre-loaded map, and the tb3-burger model with a "few" modifications.
+
+### 2.2 Overhead Camera (Orthographic View)
+The system includes an overhead "ceiling" camera for a top-down view of the environment. The service node is already running in the background with the main launch.
+
+**Open the Viewer**:
+```bash
+ros2 service call /overhead_cam std_srvs/srv/Trigger
+```
 
 ---
 
