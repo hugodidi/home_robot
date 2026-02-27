@@ -1,0 +1,5 @@
+<map id="home_robot.navigation_manager.NavigationManager.euler_to_quaternion" name="home_robot.navigation_manager.NavigationManager.euler_to_quaternion">
+<area shape="rect" id="Node000001" title="Convert Euler yaw angle to quaternion representation." alt="" coords="268,5,492,61"/>
+<area shape="rect" id="Node000002" href="$classhome__robot_1_1navigation__manager_1_1NavigationManager.html#ac789926bd2e1a16fd7bee96cce52a4c8" title="Execute waypoint navigation in sequential or random order." alt="" coords="5,13,220,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,36,220,36,220,30,252,30"/>
+</map>

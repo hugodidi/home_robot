@@ -1,0 +1,6 @@
+<map id="home_robot.lidar_grid_node.LidarGridNode.cleanup" name="home_robot.lidar_grid_node.LidarGridNode.cleanup">
+<area shape="rect" id="Node000001" title="Send reset data to Arduino before closing." alt="" coords="277,29,468,70"/>
+<area shape="rect" id="Node000002" href="$classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html#ab66cc19508eb2a3fd383366700735f0b" title=" " alt="" coords="5,29,229,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,52,229,52,229,47,261,47"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="159,16,143,10,117,8,93,10,78,15,72,21,74,28,69,29,67,19,75,10,91,5,117,3,144,5,161,11"/>
+</map>

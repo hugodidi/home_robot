@@ -1,0 +1,5 @@
+<map id="home_robot.voice_controller.VoiceController.launch_patrol" name="home_robot.voice_controller.VoiceController.launch_patrol">
+<area shape="rect" id="Node000001" title="Launch execute_patrol node in sequential or random mode." alt="" coords="5,5,195,46"/>
+<area shape="rect" id="Node000002" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#aee1a2b15019ead9bb32c275a45814b91" title="Synthesize and play Spanish text using Piper TTS." alt="" coords="243,5,429,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,23,227,23,227,28,195,28"/>
+</map>

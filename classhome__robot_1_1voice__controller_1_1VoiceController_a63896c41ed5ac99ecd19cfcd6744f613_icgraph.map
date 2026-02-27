@@ -1,0 +1,7 @@
+<map id="home_robot.voice_controller.VoiceController.go_to" name="home_robot.voice_controller.VoiceController.go_to">
+<area shape="rect" id="Node000001" title="Navigate to specified coordinates using Nav2." alt="" coords="474,13,660,54"/>
+<area shape="rect" id="Node000002" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#a7fcad39c0810fc863348b3d8f9a24050" title="Process recognized voice command and execute corresponding action." alt="" coords="240,5,426,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="459,36,426,36,426,30,459,30"/>
+<area shape="rect" id="Node000003" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#ae748910aebb44da32105eb4dc3a49676" title="Continuous voice recognition loop." alt="" coords="5,13,192,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,36,192,36,192,30,224,30"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="home_robot.voice_controller.VoiceController.save_map" name="home_robot.voice_controller.VoiceController.save_map">
+<area shape="rect" id="Node000001" title="Save current SLAM map using SLAM Toolbox service." alt="" coords="5,5,192,46"/>
+<area shape="rect" id="Node000002" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#aee1a2b15019ead9bb32c275a45814b91" title="Synthesize and play Spanish text using Piper TTS." alt="" coords="240,5,426,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,23,224,23,224,28,192,28"/>
+</map>

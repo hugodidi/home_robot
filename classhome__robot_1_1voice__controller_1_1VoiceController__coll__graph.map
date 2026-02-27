@@ -1,0 +1,5 @@
+<map id="home_robot.voice_controller.VoiceController" name="home_robot.voice_controller.VoiceController">
+<area shape="rect" id="Node000001" title="ROS2 node for Spanish voice&#45;controlled robot navigation." alt="" coords="5,120,181,608"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="72,5,114,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,87,96,120,90,120,90,87"/>
+</map>

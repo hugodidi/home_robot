@@ -1,0 +1,6 @@
+<map id="home_robot.execute_patrol.main" name="home_robot.execute_patrol.main">
+<area shape="rect" id="Node000001" title="Main patrol execution function." alt="" coords="5,29,143,70"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="37,29,35,19,41,10,54,5,74,3,95,5,108,11,105,16,94,10,74,8,56,10,45,15,41,20,42,28"/>
+<area shape="rect" id="Node000002" href="$namespacehome__robot_1_1execute__patrol.html#a3c7015ee56493648c0c8aaaccd8604ae" title="Read waypoints from YAML file." alt="" coords="191,29,344,70"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="143,47,175,47,175,52,143,52"/>
+</map>

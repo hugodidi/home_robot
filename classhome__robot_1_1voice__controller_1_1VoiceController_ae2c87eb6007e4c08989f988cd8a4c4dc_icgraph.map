@@ -1,0 +1,5 @@
+<map id="home_robot.voice_controller.VoiceController.audio_callback" name="home_robot.voice_controller.VoiceController.audio_callback">
+<area shape="rect" id="Node000001" title="Audio stream callback for continuous microphone input." alt="" coords="240,5,438,46"/>
+<area shape="rect" id="Node000002" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#ae748910aebb44da32105eb4dc3a49676" title="Continuous voice recognition loop." alt="" coords="5,5,192,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,28,192,28,192,23,224,23"/>
+</map>

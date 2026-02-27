@@ -1,0 +1,15 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,177,58,202"/>
+<area shape="rect" id="Node000001" href="$classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html" title="ROS2 node that converts LiDAR scans to 8x8 occupancy grid for Arduino visualization." alt="" coords="150,5,294,46"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="39,161,63,108,81,80,104,57,125,44,149,34,151,39,128,48,107,61,85,84,67,110,44,163"/>
+<area shape="rect" id="Node000002" href="$classhome__robot_1_1navigation__manager_1_1NavigationManager.html" title="Manages waypoint navigation for the home robot." alt="" coords="125,71,318,111"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="53,163,76,141,104,122,132,109,134,114,107,127,80,146,57,167"/>
+<area shape="rect" id="Node000003" href="$classhome__robot_1_1navigation__service_1_1NavigationService.html" title="ROS2 service node for simple pose&#45;based navigation commands." alt="" coords="132,136,312,177"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="72,180,131,169,132,175,73,185"/>
+<area shape="rect" id="Node000004" href="$classhome__robot_1_1odom__to__tf_1_1OdomToTF.html" title="Node that publishes TF transforms from odometry messages." alt="" coords="151,201,293,242"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="74,194,150,207,150,212,73,199"/>
+<area shape="rect" id="Node000005" href="$classhome__robot_1_1overhead__cam__service_1_1OverheadCamService.html" title="Service node that launches rqt_image_view for overhead camera visualization." alt="" coords="106,267,338,307"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="57,212,80,233,107,251,134,264,132,268,104,256,77,237,53,216"/>
+<area shape="rect" id="Node000006" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html" title="ROS2 node for Spanish voice&#45;controlled robot navigation." alt="" coords="129,332,315,373"/>
+<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="44,216,67,268,85,294,107,317,130,330,127,335,104,321,81,298,63,271,39,218"/>
+</map>

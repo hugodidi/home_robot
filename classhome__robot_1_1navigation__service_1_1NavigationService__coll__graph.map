@@ -1,0 +1,5 @@
+<map id="home_robot.navigation_service.NavigationService" name="home_robot.navigation_service.NavigationService">
+<area shape="rect" id="Node000001" title="ROS2 service node for simple pose&#45;based navigation commands." alt="" coords="5,120,174,242"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="69,5,110,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,87,92,120,87,120,87,87"/>
+</map>

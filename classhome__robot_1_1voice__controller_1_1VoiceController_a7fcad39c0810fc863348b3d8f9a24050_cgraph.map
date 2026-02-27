@@ -1,0 +1,18 @@
+<map id="home_robot.voice_controller.VoiceController.process_command" name="home_robot.voice_controller.VoiceController.process_command">
+<area shape="rect" id="Node000001" title="Process recognized voice command and execute corresponding action." alt="" coords="5,187,192,242"/>
+<area shape="rect" id="Node000002" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#acc30a5f461398c3846f3915035abba32" title="Clear visual path on the map." alt="" coords="241,5,428,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,185,171,128,203,98,238,71,245,67,248,71,241,75,207,102,175,132,124,188"/>
+<area shape="rect" id="Node000003" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#a76469aa2ad047e86e029a9319e959d53" title="Extract numeric coordinates from Spanish voice command." alt="" coords="241,85,428,141"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,184,239,151,252,145,254,150,241,156,165,189"/>
+<area shape="rect" id="Node000004" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#a63896c41ed5ac99ecd19cfcd6744f613" title="Navigate to specified coordinates using Nav2." alt="" coords="241,165,428,206"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="192,200,225,196,226,201,193,206"/>
+<area shape="rect" id="Node000005" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#aee1a2b15019ead9bb32c275a45814b91" title="Synthesize and play Spanish text using Piper TTS." alt="" coords="477,252,663,292"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="192,223,462,256,461,261,192,228"/>
+<area shape="rect" id="Node000006" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#aaff94da5681d0bda835596f89bb0c769" title="Launch execute_patrol node in sequential or random mode." alt="" coords="240,280,429,320"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="178,240,263,271,261,276,177,245"/>
+<area shape="rect" id="Node000007" href="$classhome__robot_1_1voice__controller_1_1VoiceController.html#a54c1f783e9e4c1ada0337ca58cc6fd38" title="Save current SLAM map using SLAM Toolbox service." alt="" coords="241,345,428,386"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="129,241,179,286,241,330,253,336,250,340,238,334,176,290,126,245"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="393,204,499,243,497,248,391,209"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="429,286,461,282,462,287,430,291"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="395,342,428,329,508,296,510,301,430,334,397,347"/>
+</map>

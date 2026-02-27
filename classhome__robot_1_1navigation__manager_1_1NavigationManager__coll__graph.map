@@ -1,0 +1,5 @@
+<map id="home_robot.navigation_manager.NavigationManager" name="home_robot.navigation_manager.NavigationManager">
+<area shape="rect" id="Node000001" title="Manages waypoint navigation for the home robot." alt="" coords="5,120,188,343"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="76,5,118,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,86,99,120,94,120,94,86"/>
+</map>

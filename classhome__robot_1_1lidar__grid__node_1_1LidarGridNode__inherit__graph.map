@@ -1,0 +1,5 @@
+<map id="home_robot.lidar_grid_node.LidarGridNode" name="home_robot.lidar_grid_node.LidarGridNode">
+<area shape="rect" id="Node000001" title="ROS2 node that converts LiDAR scans to 8x8 occupancy grid for Arduino visualization." alt="" coords="5,120,139,404"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="51,5,93,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,87,75,120,70,120,70,87"/>
+</map>
