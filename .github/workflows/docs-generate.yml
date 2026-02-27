@@ -20,6 +20,9 @@ jobs:
         with:
           doxyfile-path: "Doxyfile"
 
+      - name: Copy assets to docs
+        run: cp -r assets docs/html/assets
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

@@ -2,9 +2,7 @@
 
 The following image show the schematic of the hardware interface:
 
-<div align="center">
-    <img src="../assets/schematic.png" alt="schematic" width="700" />
-</div>
+![schematic](../assets/schematic.png)
 
 The hardware is composed of:
 
