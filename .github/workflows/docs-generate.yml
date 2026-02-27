@@ -21,7 +21,10 @@ jobs:
           doxyfile-path: "Doxyfile"
 
       - name: Copy assets to docs
-        run: cp -r assets docs/html/assets
+        run: |
+          mkdir -p docs/html/assets
+          sudo chown -R $USER:$USER docs/html
+          cp -r assets/* docs/html/assets/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
