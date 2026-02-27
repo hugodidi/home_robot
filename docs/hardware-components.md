@@ -2,7 +2,7 @@
 
 The following image show the schematic of the hardware interface:
 
-![schematic](../assets/schematic.png)
+![schematic](assets/schematic.png)
 
 The hardware is composed of:
 

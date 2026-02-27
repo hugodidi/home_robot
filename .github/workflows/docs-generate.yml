@@ -22,6 +22,8 @@ jobs:
 
       - name: Copy assets to docs
         run: |
+          mkdir -p docs/assets
+          cp -r assets/* docs/assets/
           sudo chown -R $USER:$USER docs
           mkdir -p docs/html/assets
           cp -r assets/* docs/html/assets/
