@@ -54,10 +54,12 @@ This package includes:
 
 ## Hardware (Arduino)
 
-If you have the physical Arduino hardware, just plug it in and launch the LiDAR grid node from within the container:
+If you have the physical [Arduino hardware](docs/hardware_components.md), just plug it in and launch the LiDAR grid node from within the container:
+
 ```bash
 ros2 run home_robot lidar_grid_node --port /dev/{your_arduino_port}
 ```
+
 
 # Available Commands   
 
