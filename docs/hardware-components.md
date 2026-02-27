@@ -1,6 +1,6 @@
 # Hardware Components for Home Robot Arduino-based Hardware Interface
 
-The following images show the schematic and the assembly of the hardware interface:
+The following image show the schematic of the hardware interface:
 
 <div align="center">
     <img src="../assets/schematic.png" alt="schematic" width="700" />
