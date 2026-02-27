@@ -5,7 +5,7 @@
 
 ---
 
-![Home Robot](assets/home_robot_banner.jpg)
+![Home Robot](docs/assets/home_robot_banner.jpg)
 
 ---
 
