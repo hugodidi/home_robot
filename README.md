@@ -51,7 +51,7 @@ This package includes:
     ```
 
 > [!TIP]
-> If you encounter **process issues when relaunching the simulation**, we provide optimized launch scripts in the `scripts/` folder (e.g., `./scripts/launch_navigation.sh`, `./scripts/launch_voice.sh`). These scripts handle environment sourcing and cleanup automatically for a "clean start". Refer to the [commands documentation](./docs/commands.md) for more details.
+> If you encounter **process issues when relaunching the simulation multiple times**, we provide optimized launch scripts in the `scripts/` folder (e.g., `./scripts/launch_navigation.sh`, `./scripts/launch_voice.sh`). These scripts handle environment sourcing and cleanup automatically for a "clean start". Refer to the [commands documentation](./docs/commands.md) for more details.
 
 ## Hardware (Arduino)
 

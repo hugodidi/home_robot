@@ -38,8 +38,9 @@ def generate_launch_description():
         }.items()
     )
 
-    # Static map server: publishes /map when not using SLAM, /map_static when using SLAM
-    map_server_node = Node(
+    # Map server configuration
+    # MODE A: SLAM (remaps to /map_static)
+    map_server_slam_node = Node(
         package='nav2_map_server',
         executable='map_server',
         name='map_server',
@@ -47,30 +48,54 @@ def generate_launch_description():
         parameters=[{'use_sim_time': use_sim_time},
                     {'yaml_filename': map_yaml_file}],
         remappings=[('/map', '/map_static')],
-        condition=IfCondition(use_slam)  # Solo remap en modo SLAM
+        condition=IfCondition(use_slam)
     )
-    
-    # Map server sin remapping para modo navegación normal
-    map_server_localization_node = Node(
+
+    # MODE B: Localization (publishes to /map)
+    map_server_loc_node = Node(
         package='nav2_map_server',
         executable='map_server',
         name='map_server',
         output='screen',
         parameters=[{'use_sim_time': use_sim_time},
                     {'yaml_filename': map_yaml_file}],
-        condition=UnlessCondition(use_slam)  # Sin remap en modo localization
+        condition=UnlessCondition(use_slam)
     )
 
-    lifecycle_manager_node = Node(
+    # AMCL: Only for localization
+    amcl_node = Node(
+        package='nav2_amcl',
+        executable='amcl',
+        name='amcl',
+        output='screen',
+        parameters=[params_file, {'use_sim_time': use_sim_time}],
+        condition=UnlessCondition(use_slam)
+    )
+
+    # Lifecycle managers
+    # Localization: Manages map_server + amcl
+    lc_manager_loc = Node(
         package='nav2_lifecycle_manager',
         executable='lifecycle_manager',
-        name='lifecycle_manager_mapper',
+        name='lifecycle_manager_localization',
         output='screen',
         parameters=[{'use_sim_time': use_sim_time},
                     {'autostart': True},
-                    {'node_names': ['map_server']}]
+                    {'node_names': ['map_server', 'amcl']}],
+        condition=UnlessCondition(use_slam)
     )
 
+    # SLAM: Manages ONLY map_server
+    lc_manager_slam = Node(
+        package='nav2_lifecycle_manager',
+        executable='lifecycle_manager',
+        name='lifecycle_manager_slam',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time},
+                    {'autostart': True},
+                    {'node_names': ['map_server']}],
+        condition=IfCondition(use_slam)
+    )
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -81,19 +106,22 @@ def generate_launch_description():
         DeclareLaunchArgument(
             'use_slam',
             default_value='false',
-            description='When true, Nav2 subscribes to SLAM map (/map); when false, static map_server publishes /map_static and is used for localization'),
+            description='When true, uses SLAM; when false, uses AMCL + Static Map'),
         
         DeclareLaunchArgument(
             'params_file',
             default_value=os.path.join(pkg_home_robot, 'config', 'nav2_params.yaml'),
-            description='Full path to the ROS2 parameters file to use for all navigation nodes'),
+            description='Full path to the ROS2 parameters file'),
 
         DeclareLaunchArgument(
             'map',
             default_value=os.path.join(pkg_home_robot, 'maps', 'mapa_20260214_221450.yaml'),
-            description='Full path to map yaml file to load'),
+            description='Full path to map yaml file'),
+
         nav2_launch,
-        map_server_node,
-        map_server_localization_node,
-        lifecycle_manager_node,
+        map_server_slam_node,
+        map_server_loc_node,
+        amcl_node,
+        lc_manager_loc,
+        lc_manager_slam,
     ])
