@@ -97,18 +97,4 @@ If you need to drive the robot manually using your keyboard:
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
----
 
-## 📋 Quick Reference Table
-
-| Task | Command (Inside Container) |
-| :--- | :--- |
-| **Full Launch (Loaded Map)** | `ros2 launch home_robot main_nav.launch.py` |
-| **Full Launch (SLAM)** | `ros2 launch home_robot main_nav.launch.py use_slam:=true` |
-| **Voice Interface** | `./scripts/launch_voice.sh` |
-| **Patrol** | `ros2 run home_robot execute_patrol` |
-| **Arduino LiDAR** | `ros2 run home_robot lidar_grid_node --port /dev/...` |
-| **Manual Drive** | `ros2 run teleop_twist_keyboard teleop_twist_keyboard` |
-| **Save Map** | `say "Guardar mapa"` (Voice) or via service call |
-
----
