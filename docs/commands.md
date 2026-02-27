@@ -70,9 +70,6 @@ ros2 run home_robot execute_patrol
 ros2 run home_robot execute_patrol --random
 ```
 
-And go to 
----
-
 ## 🛠️ Hardware & Tools
 
 ### 4.1 LiDAR Grid (Arduino Interface)
