@@ -276,12 +276,15 @@ class VoiceController(Node):
         except Exception as e:
             self.get_logger().error(f"Error en bucle de voz: {e}")
 
+    def cancel_all_navigation(self) -> None:
+        """Clear visual path on the map."""
         try:
             self.get_logger().info("Limpiando path visual...")
             empty_path = Path()
             empty_path.header.frame_id = 'map'
             empty_path.header.stamp = self.get_clock().now().to_msg()
             self.plan_pub.publish(empty_path)
+            self.get_logger().info("Path visual limpiado")
         except Exception as e:
             self.get_logger().warn(f"No se pudo limpiar path visual: {e}")
     
@@ -544,11 +547,11 @@ class VoiceController(Node):
                 self.get_logger().info("Navegación interrumpida por el usuario")
                 self.nav.cancelTask()
             except Exception as e:
-                self.get_logger().error(f"Error en navegación: {e}", exc_info=True)
+                self.get_logger().error(f"Error en navegación: {e}")
                 try:
                     self.say("Ocurrió un error durante la navegación.")
                 except:
-                    pass  # If TTS fails, at least don't block
+                    pass
             finally:
                 self.is_navigating = False
 
