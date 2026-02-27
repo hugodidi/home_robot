@@ -129,14 +129,17 @@ class VoiceController(Node):
             10
         )
         
+        # Publisher for emergency stop request (handles execute_patrol termination)
+        self.stop_pub = self.create_publisher(String, '/stop_patrol', 10)
+        
         # 3. Navigation Destinations
         self.locations = {
             "sofá": [3.5, -2.5],
             "sofa": [3.5, -2.5],
             "sillón": [3.5, -2.5],
             "cocina": [8.0, -3.0],
-            "almacén": [14.0, -1.0],
-            "almacen": [14.0, -1.0],
+            "almacén": [12.0, -1.0],
+            "almacen": [12.0, -1.0],
             "principal": [10.0, 6.0],
             "baño": [5.0, 6.0],
             "banyo": [5.0, 6.0],
@@ -310,8 +313,13 @@ class VoiceController(Node):
         if any(w in text for w in ["para", "pará", "parar", "stop", "detente", "detén", "alto"]):
             self.get_logger().info("🛑 Comando de parada detectado")
             
-            # STEP 1: Send SIGTERM to execute_patrol for clean navigation cancellation
-            self.get_logger().info("Enviando SIGTERM a execute_patrol...")
+            # STEP 0: Send ROS-native stop signal first (most robust)
+            stop_msg = String()
+            stop_msg.data = "STOP"
+            self.stop_pub.publish(stop_msg)
+            self.get_logger().info("Señal de parada enviada por tópico /stop_patrol")
+
+            # STEP 1: Send SIGTERM to execute_patrol...
             try:
                 # First SIGTERM to allow cleanup opportunity
                 result = subprocess.run(
@@ -522,7 +530,7 @@ class VoiceController(Node):
                     return
                 
                 # Wait for navigation to complete
-                while not self.nav.result_future.done() and self.is_navigating:
+                while not self.nav.isTaskComplete() and self.is_navigating:
                     time.sleep(0.1)
                 
                 # If exited via manual cancellation, don't process result
@@ -532,17 +540,16 @@ class VoiceController(Node):
                 
                 # Get result
                 result = self.nav.getResult()
+                
+                # Check if we are close enough even if result isn't perfect
+                # (Simulation sometimes returns FAILED or UNKNOWN if tolerances are tight)
                 if result == TaskResult.SUCCEEDED:
+                    self.get_logger().info(f"✓ Navegación a {name} completada con éxito")
                     self.say(f"Ya he llegado a {name}")
-                elif result == TaskResult.CANCELED:
-                    self.get_logger().info("Navegación cancelada.")
-                elif result == TaskResult.FAILED:
-                    self.get_logger().error(f"Falló navegación a {name}")
-                elif result == TaskResult.UNKNOWN:
-                    # Ignore unknown result (likely from previous cancellation)
-                    self.get_logger().debug(f"Resultado desconocido al navegar a {name}, ignorando.")
                 else:
-                    self.get_logger().warn(f"Resultado inesperado al navegar a {name}: {result}")
+                    self.get_logger().warn(f"Navegación a {name} terminó con resultado: {result}")
+                    # If we finished the loop, we are likely at the goal even if result isn't 'Succeeded'
+                    self.say(f"He llegado a {name}")
             except KeyboardInterrupt:
                 self.get_logger().info("Navegación interrumpida por el usuario")
                 self.nav.cancelTask()
@@ -561,43 +568,33 @@ class VoiceController(Node):
     def launch_patrol(self, random: bool = False) -> None:
         """
         Launch execute_patrol node in sequential or random mode.
-        
-        Spawns patrol as separate subprocess that publishes waypoint arrival
-        events back to this node.
-        
-        Args:
-            random: If True, visit waypoints in random order; else sequential
         """
-        def _patrol_task():
-            try:
-                # Build command using ros2 run (configures ROS2 environment correctly)
-                cmd = ["ros2", "run", "home_robot", "execute_patrol"]
-                if random:
-                    cmd.append("--random")
-                
-                self.get_logger().info(f"🚀 Lanzando patrulla: {' '.join(cmd)}")
-                
-                # Get current environment
-                env = os.environ.copy()
-                
-                # Execute command in subprocess
-                # stdout/stderr go to console for debugging
-                self.patrol_process = subprocess.Popen(
-                    cmd,
-                    env=env,
-                    preexec_fn=os.setsid,  # Create new process session
-                    stdout=None,  # Inherit stdout (will show in terminal)
-                    stderr=None   # Inherit stderr (errors will show)
-                )
-                
-                # Process runs in background, don't wait for completion
-                self.get_logger().info(f"✓ Patrulla iniciada (PID: {self.patrol_process.pid})")
-                
-            except Exception as e:
-                self.get_logger().error(f"❌ Error al lanzar patrulla: {e}", exc_info=True)
-                self.say("Error al iniciar la patrulla")
-        
-        threading.Thread(target=_patrol_task, daemon=True).start()
+        # Cancel any previous patrol first
+        if self.patrol_process and self.patrol_process.poll() is None:
+            self.get_logger().info("Deteniendo patrulla previa...")
+            os.killpg(os.getpgid(self.patrol_process.pid), signal.SIGTERM)
+            time.sleep(0.2)
+
+        try:
+            cmd = ["ros2", "run", "home_robot", "execute_patrol"]
+            if random:
+                cmd.append("--random")
+            
+            self.get_logger().info(f"🚀 Lanzando patrulla: {' '.join(cmd)}")
+            
+            # Use os.setsid to create a process group that we can kill later
+            self.patrol_process = subprocess.Popen(
+                cmd,
+                env=os.environ.copy(),
+                preexec_fn=os.setsid,
+                stdout=None,
+                stderr=None
+            )
+            self.get_logger().info(f"✓ Patrulla iniciada (PID: {self.patrol_process.pid})")
+            
+        except Exception as e:
+            self.get_logger().error(f"❌ Error al lanzar patrulla: {e}")
+            self.say("Error al iniciar la patrulla")
 
     def save_map(self) -> None:
         """

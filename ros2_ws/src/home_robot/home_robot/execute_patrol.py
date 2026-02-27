@@ -30,39 +30,10 @@ cmd_vel_pub_global = None
 
 
 def signal_handler(signum, frame):
-    """Handle SIGTERM and SIGINT signals for graceful shutdown.
-    
-    When a signal is received, this handler:
-    1. Sets the stop_patrol flag
-    2. Cancels any active navigation task
-    3. Publishes zero velocity to physically stop the robot
-    
-    Args:
-        signum: Signal number
-        frame: Current stack frame
-    """
-    global stop_patrol, navigator_global, cmd_vel_pub_global
+    """Safe signal handler that only sets a flag."""
+    global stop_patrol
     print("\n⚠ Interruption signal received, stopping patrol...")
     stop_patrol = True
-    
-    # CRITICAL: Cancel active navigation immediately
-    if navigator_global:
-        try:
-            print("  ⚠ Canceling active Nav2 navigation...")
-            navigator_global.cancelTask()
-        except Exception as e:
-            print(f"  ⚠ Error canceling navigation: {e}")
-    
-    # CRITICAL: Publish zero velocity to physically stop the robot
-    if cmd_vel_pub_global:
-        try:
-            print("  ⚠ Publishing zero velocity...")
-            stop_msg = Twist()
-            for _ in range(10):
-                cmd_vel_pub_global.publish(stop_msg)
-                time.sleep(0.02)
-        except Exception as e:
-            print(f"  ⚠ Error publishing cmd_vel: {e}")
 
 
 def read_waypoints(file_path: str) -> dict:
@@ -108,6 +79,14 @@ def main():
     
     # Create cmd_vel publisher (to stop robot when signal is received)
     cmd_vel_pub_global = navigator.create_publisher(Twist, '/cmd_vel', 10)
+
+    # NEW: Secure stop via ROS topic
+    def stop_callback(msg):
+        global stop_patrol
+        print("\n🛑 Stop request received via ROS topic!")
+        stop_patrol = True
+        
+    navigator.create_subscription(String, '/stop_patrol', stop_callback, 10)
 
     # Wait for Nav2 action server to become available
     print("Waiting for Nav2 to be ready...")
@@ -155,97 +134,117 @@ def main():
         time.sleep(0.1)
     
     print(f"\n🎯 Starting patrol with {len(waypoints_list)} waypoints")
-    for idx, (name, wp) in enumerate(waypoints_list, 1):
-        # Check if we should stop before sending next goal
-        if stop_patrol:
-            print("\n⚠ Patrol stopped by external signal")
-            break
-            
-        print(f"\n{'='*60}")
-        print(f"[{idx}/{len(waypoints_list)}] Next goal: {name}")
-        print(f"{'='*60}")
-        goal_pose = PoseStamped()
-        goal_pose.header.frame_id = 'map'
-        goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-        goal_pose.pose.position.x = float(wp['x'])
-        goal_pose.pose.position.y = float(wp['y'])
-        
-        # Convert theta (yaw) to quaternion
-        theta = float(wp['theta'])
-        goal_pose.pose.orientation.z = math.sin(theta / 2.0)
-        goal_pose.pose.orientation.w = math.cos(theta / 2.0)
-
-        # Send goal to navigation stack
-        navigator.goToPose(goal_pose)
-        print(f"[DEBUG] Goal sent to Nav2, waiting for result...")
-
-        # Wait for task completion - use isTaskComplete() instead of result_future.done()
-        # because result_future remains "done" from the previous waypoint
-        while not stop_patrol:
-            # Get feedback from navigation
-            feedback = navigator.getFeedback()
-            if feedback:
-                # Display remaining distance if available
-                distance = feedback.distance_remaining
-                if distance > 0:
-                    print(f"  Remaining distance: {distance:.2f}m", end='\r')
-            
-            # Check if task is complete
-            if navigator.isTaskComplete():
-                print()  # New line after progress display
+    try:
+        for idx, (name, wp) in enumerate(waypoints_list, 1):
+            # Check if we should stop before sending next goal
+            if stop_patrol:
+                print("\n⚠ Patrol stopped by external signal")
                 break
                 
-            time.sleep(0.1)
-        
-        # If stop signal received, cancel navigation and exit
-        if stop_patrol:
-            print("\n⚠ Patrol interrupted, canceling current navigation...")
-            navigator.cancelTask()
-            break
+            print(f"\n{'='*60}")
+            print(f"[{idx}/{len(waypoints_list)}] Next goal: {name}")
+            print(f"{'='*60}")
+            goal_pose = PoseStamped()
+            goal_pose.header.frame_id = 'map'
+            goal_pose.header.stamp = navigator.get_clock().now().to_msg()
+            goal_pose.pose.position.x = float(wp['x'])
+            goal_pose.pose.position.y = float(wp['y'])
+            
+            # Convert theta (yaw) to quaternion
+            theta = float(wp['theta'])
+            goal_pose.pose.orientation.z = math.sin(theta / 2.0)
+            goal_pose.pose.orientation.w = math.cos(theta / 2.0)
 
-        result = navigator.getResult()
-        print(f"\n[DEBUG] Navigation result for {name}: {result}")
-        
-        if result == TaskResult.SUCCEEDED:
-            print(f"\n✓ Goal {name} reached successfully!")
-            # Publish event for voice_controller to announce
+            # Send goal to navigation stack
+            navigator.goToPose(goal_pose)
+            print(f"[DEBUG] Goal sent to Nav2, waiting for result...")
+
+            # Wait for task completion - use isTaskComplete() instead of result_future.done()
+            # because result_future remains "done" from the previous waypoint
+            while not stop_patrol:
+                # Get feedback from navigation
+                feedback = navigator.getFeedback()
+                if feedback:
+                    # Display remaining distance if available
+                    distance = feedback.distance_remaining
+                    if distance > 0:
+                        print(f"  Remaining distance: {distance:.2f}m", end='\r')
+                
+                # Check if task is complete
+                if navigator.isTaskComplete():
+                    print()  # New line after progress display
+                    break
+                    
+                time.sleep(0.1)
+            
+            # If stop signal received, cancel navigation and exit
+            if stop_patrol:
+                print("\n⚠ Patrol interrupted, canceling current navigation...")
+                navigator.cancelTask()
+                break
+
+            result = navigator.getResult()
+            print(f"\n[DEBUG] Navigation result for {name}: {result}")
+            
+            if result == TaskResult.SUCCEEDED:
+                print(f"\n✓ Goal {name} reached successfully!")
+                # Publish event for voice_controller to announce
+                try:
+                    event_msg = String()
+                    event_msg.data = f"llegada:{name}"
+                    patrol_event_pub.publish(event_msg)
+                    print(f"[DEBUG] Arrival event published: {event_msg.data}")
+                    time.sleep(0.2)  # Allow time for message to be published
+                except Exception as e:
+                    print(f"[ERROR] Could not publish event: {e}")
+                print(f"[DEBUG] Continuing to next waypoint...")
+                # IMPORTANT: No break here, continue to next waypoint
+                
+            elif result == TaskResult.CANCELED:
+                print(f"\n⚠ Navigation canceled by external command.")
+                break  # Exit patrol if canceled
+                
+            elif result == TaskResult.UNKNOWN:
+                # If unknown and stop_patrol is set, it means we must exit NOW
+                if stop_patrol:
+                    print(f"\n⚠ Unknown result with stop flag, exiting patrol.")
+                    break
+                print(f"\n⚠ Unknown result for {name}, continuing to next...")
+                # If not stopping, we can try next
+                
+            elif result == TaskResult.FAILED:
+                print(f"\n❌ Failed to reach goal {name}. Stopping patrol.")
+                break
+            
+            else:
+                if stop_patrol:
+                    break
+                print(f"\n⚠ Unexpected result: {result}, continuing to next...")
+            
+            # Brief pause between waypoints
+            print(f"[DEBUG] Waypoint {name} completed, continuing to next...")
+            time.sleep(0.5)
+
+    except (KeyboardInterrupt, rclpy.executors.ExternalShutdownException):
+        print("\n🛑 Patrol interrupted.")
+    finally:
+        # Final cleanup: Execute only if ROS is still valid
+        if rclpy.ok():
+            print("  ⚠ Cleaning up navigation and stopping robot...")
             try:
-                event_msg = String()
-                event_msg.data = f"llegada:{name}"
-                patrol_event_pub.publish(event_msg)
-                print(f"[DEBUG] Arrival event published: {event_msg.data}")
-                time.sleep(0.2)  # Allow time for message to be published
-            except Exception as e:
-                print(f"[ERROR] Could not publish event: {e}")
-            print(f"[DEBUG] Continuing to next waypoint...")
-            # IMPORTANT: No break here, continue to next waypoint
-            
-        elif result == TaskResult.CANCELED:
-            print(f"\n⚠ Navigation canceled by external command.")
-            break  # Exit patrol if canceled
-            
-        elif result == TaskResult.UNKNOWN:
-            # Ignore unknown result (from previous cancellation), continue to next waypoint
-            print(f"\n⚠ Unknown result for {name}, continuing to next...")
-            # No break, continue
-            
-        elif result == TaskResult.FAILED:
-            print(f"\n❌ Failed to reach goal {name}. Stopping patrol.")
-            break
-            
-        else:
-            print(f"\n⚠ Unexpected result: {result}, continuing to next...")
-            # No break, continue
+                navigator.cancelTask()
+                stop_msg = Twist()
+                for _ in range(10):
+                    cmd_vel_pub_global.publish(stop_msg)
+                    time.sleep(0.02)
+            except:
+                pass
         
-        # Brief pause between waypoints
-        print(f"[DEBUG] Waypoint {name} completed, continuing to next...")
-        time.sleep(0.5)
-
-    if stop_patrol:
-        print("\n🛑 Patrol canceled by user.")
-    else:
-        print("\n🏁 Patrol completed.")
-    rclpy.shutdown()
+        if not rclpy.ok():
+             print("\n🏁 Patrol finished (ROS shut down).")
+        else:
+             print("\n🏁 Patrol finished.")
+             rclpy.shutdown()
 
 if __name__ == '__main__':
     try:
