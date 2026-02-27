@@ -22,8 +22,8 @@ jobs:
 
       - name: Copy assets to docs
         run: |
+          sudo chown -R $USER:$USER docs
           mkdir -p docs/html/assets
-          sudo chown -R $USER:$USER docs/html
           cp -r assets/* docs/html/assets/
 
       - name: Deploy to GitHub Pages
