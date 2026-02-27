@@ -276,26 +276,12 @@ class VoiceController(Node):
         except Exception as e:
             self.get_logger().error(f"Error en bucle de voz: {e}")
 
-    def cancel_all_navigation(self) -> None:
-        """
-        Cancel all active navigation tasks cleanly.
-        
-        Cancels Nav2 navigation task and clears visual path display without
-        affecting costmaps.
-        """
         try:
-            self.get_logger().info("Cancelando navegación activa...")
-            self.nav.cancelTask()
-        except Exception as e:
-            self.get_logger().warn(f"Error cancelando navegación: {e}")
-        
-        # Clear visual path by publishing empty path (doesn't affect costmaps)
-        try:
+            self.get_logger().info("Limpiando path visual...")
             empty_path = Path()
             empty_path.header.frame_id = 'map'
             empty_path.header.stamp = self.get_clock().now().to_msg()
             self.plan_pub.publish(empty_path)
-            self.get_logger().info("Path visual limpiado")
         except Exception as e:
             self.get_logger().warn(f"No se pudo limpiar path visual: {e}")
     
@@ -365,18 +351,18 @@ class VoiceController(Node):
                     pass
                 self.patrol_process = None
             
-            # STEP 5: Cancel navigation in Nav2 (from voice_controller as well)
-            self.cancel_all_navigation()
-            
-            # STEP 6: Mark local navigation as inactive
+            # STEP 5: Mark local navigation as inactive (the thread will handle cancellation)
             self.is_navigating = False
             
-            # STEP 7: Publish zero velocity MULTIPLE TIMES (fallback)
-            self.get_logger().info("Publicando cmd_vel cero (respaldo)...")
+            # STEP 6: Clear visual path
+            self.cancel_all_navigation()
+            
+            # STEP 7: Publish zero velocity MULTIPLE TIMES (immediate physical stop)
+            self.get_logger().info("Publicando cmd_vel cero (frenado inmediato)...")
             stop_msg = Twist()
-            for _ in range(30):  # 600ms of publications
+            for _ in range(20):
                 self.cmd_vel_pub.publish(stop_msg)
-                time.sleep(0.02)
+                time.sleep(0.01)
             
             self.get_logger().info("✓ Robot detenido completamente")
             self.say("Entendido, me detengo.")
@@ -533,9 +519,13 @@ class VoiceController(Node):
                 while not self.nav.isTaskComplete() and self.is_navigating:
                     time.sleep(0.1)
                 
-                # If exited via manual cancellation, don't process result
+                # If exited via manual cancellation, perform actual task cancellation here (thread-safe)
                 if not self.is_navigating:
-                    self.get_logger().info("Navegación cancelada por comando de parada")
+                    self.get_logger().info("Cancelando tarea en Nav2 de forma segura...")
+                    try:
+                        self.nav.cancelTask()
+                    except:
+                        pass
                     return
                 
                 # Get result
