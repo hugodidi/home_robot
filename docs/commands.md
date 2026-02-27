@@ -36,6 +36,9 @@ ros2 launch home_robot main_nav.launch.py
 
 # Option B: SLAM Mapping (builds new map from scratch)
 ros2 launch home_robot main_nav.launch.py use_slam:=true
+
+# Use the provided launch script for nav2 and rviz cleanup if needed
+./scripts/launch_navigation.sh
 ```
 
 > [!TIP]
@@ -49,7 +52,9 @@ You can control the robot using your voice (Microphone required) or automated pa
 
 ### 3.1 Launch Voice Controller
 ```bash
-# Best practice: use the provided launch script for audio cleanup
+ros2 run home_robot voice_controller
+
+# Use the provided launch script for audio cleanup if needed
 ./scripts/launch_voice.sh
 ```
 *   **Commands**: *"Ve al sofá"*, *"Patrulla"*, *"Para"*, *"Guardar mapa"*.
