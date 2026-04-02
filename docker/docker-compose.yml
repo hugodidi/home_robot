@@ -14,14 +14,18 @@ services:
     ports:
       - "5901:5901" # VNC Port
       - "6080:80" # noVNC Port (Browser)
+      - "5000:5000" # YASMIN Viewer (FSM visualization)
+    devices:
+      - /dev/dri:/dev/dri # Hardware acceleration (GPU)
+      - /dev:/dev # Access to Serial/USB devices
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - /dev/snd:/dev/snd # Microphone and Speakers
-      - /dev:/dev # Access to Serial/USB devices
       - /run/user/1000/pulse:/run/user/1000/pulse # PulseAudio (Sound)
       - /home/hugo/.config/pulse/cookie:/home/ubuntu/.pulse-cookie # PulseAudio Cookie
       # Mount the workspace but isolate build/install/log using anonymous volumes
       - ../ros2_ws:/home/ubuntu/home_robot/ros2_ws
+      - ../scripts:/home/ubuntu/home_robot/scripts
       - /home/ubuntu/home_robot/ros2_ws/build
       - /home/ubuntu/home_robot/ros2_ws/install
       - /home/ubuntu/home_robot/ros2_ws/log

@@ -64,6 +64,24 @@ ros2 run home_robot lidar_grid_node --port /dev/{your_arduino_port}
 > [!TIP]
 > You can check the active usb ports with the command `ls /dev/tty*` or `ls /dev/ttyACM*`.
 
+## FSM Navigation (YASMIN)
+
+You can launch an autonomous **Finite State Machine (FSM)** patrol. This modular feature, implemented with **[YASMIN](https://github.com/uleroboticsgroup/yasmin)**, manages waypoint transitions and handles errors.
+
+1.  **Launch the navigation stack** (as described in Quick Start).
+2.  **Launch the FSM Patrol** (in a new terminal):
+    ```bash
+    ./scripts/launch_fsm_patrol.sh [--random] [--skip-errors]
+    ```
+3.  **Visualize the FSM**:
+    The YASMIN Viewer will automatically open in Firefox (`http://localhost:5000`) to display the live state transitions.
+
+> [!NOTE]
+> The FSM publishes events to the voice controller. If `voice_controller` is running, the robot will announce its arrival at each waypoint.
+
+> [!TIP]
+> **Want to know how it works under the hood?** Check out the [FSM Architecture Documentation](./docs/fsm_info.md) for a detailed breakdown of each state!
+
 # Available Commands   
 
 See the [commands documentation](./docs/commands.md) for a detailed explanation of the available commands and how to use them. 

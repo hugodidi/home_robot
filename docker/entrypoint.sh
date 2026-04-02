@@ -22,7 +22,10 @@ echo "noVNC (Browser) started at Port 6080"
 
 # Source ROS environments
 source /opt/ros/jazzy/setup.bash
-source /home/ros/home_robot/ros2_ws/install/setup.bash
+if [ -f "/opt/yasmin_ws/install/setup.bash" ]; then
+    source /opt/yasmin_ws/install/setup.bash
+fi
+source /home/ubuntu/home_robot/ros2_ws/install/setup.bash
 
 # Execute the passed command
 exec "$@"

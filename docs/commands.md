@@ -71,9 +71,9 @@ ros2 run home_robot voice_controller
 > [!TIP]
 > Say "Opciones" to let the robot list the available commands.
 
-### 3.2 Automated Waypoint Patrol
+### 3.2 Automated Waypoint Patrol (Legacy)
 
-Also, you can ask the robot to patrol through the waypoints manually.
+Also, you can ask the robot to patrol through the waypoints manually using the original behavior script.
 
 ```bash
 # Sequential patrol (Sofa -> Kitchen -> ... -> Home)
@@ -82,6 +82,25 @@ ros2 run home_robot execute_patrol
 # Random patrol
 ros2 run home_robot execute_patrol --random
 ```
+
+### 3.3 Advanced FSM Patrol (YASMIN)
+
+You can launch a much more robust patrol modeled explicitly as a **Finite State Machine (FSM)**. This alternative handles anti-stuck navigation recovery (`Twist` backward maneuvers) and provides live visualization.
+
+```bash
+# Easy launch via script (Automatically sets up environment and opens Firefox)
+./scripts/launch_fsm_patrol.sh
+
+# With advanced FSM arguments:
+./scripts/launch_fsm_patrol.sh --random
+./scripts/launch_fsm_patrol.sh --skip-errors
+
+# Or launch it manually via ROS 2 (does not open browser automatically)
+ros2 launch home_robot_fsm fsm_patrol.launch.py random:=true skip_errors:=true
+```
+
+> [!TIP]
+> The FSM viewer runs at `http://localhost:5000`. Watch the mermaid node graph transition in real time as the robot navigates the map.
 
 ## 🛠️ Hardware & Tools
 
