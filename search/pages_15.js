@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['save_20map_0',['4.2 Save Map',['../md_docs_2commands.html#autotoc_md21',1,'']]],
-  ['script_20activates_20venv_1',['Launch with dedicated script (activates venv)',['../namespacehome__robot_1_1voice__controller.html#autotoc_md24',1,'']]],
-  ['service_20robotics_20course_20at_20university_20of_20león_2',['Home Robot: A ROS 2 Jazzy package for Service Robotics Course at University of León',['../index.html',1,'']]],
-  ['simulation_20inside_20container_3',['🚀 Navigation &amp;amp; Simulation (Inside Container)',['../md_docs_2commands.html#autotoc_md12',1,'']]],
-  ['stack_4',['2.1 Start Full Navigation Stack',['../md_docs_2commands.html#autotoc_md13',1,'']]],
-  ['start_20docker_5',['Quick start (Docker)',['../index.html#autotoc_md3',1,'']]],
-  ['start_20full_20navigation_20stack_6',['2.1 Start Full Navigation Stack',['../md_docs_2commands.html#autotoc_md13',1,'']]],
-  ['start_20stop_20the_20system_7',['1. Start/Stop the System',['../md_docs_2commands.html#autotoc_md9',1,'']]],
-  ['stop_20the_20system_8',['1. Start/Stop the System',['../md_docs_2commands.html#autotoc_md9',1,'']]],
-  ['system_9',['1. Start/Stop the System',['../md_docs_2commands.html#autotoc_md9',1,'']]],
-  ['system_20command_20reference_10',['Home Robot Navigation System - Command Reference',['../md_docs_2commands.html',1,'']]]
+  ['recommended_0',['🐳 Running with Docker (Recommended)',['../md_docs_2commands.html#autotoc_md9',1,'']]],
+  ['reference_1',['Home Robot Navigation System - Command Reference',['../md_docs_2commands.html',1,'']]],
+  ['requirements_2',['Requirements',['../index.html#autotoc_md2',1,'']]],
+  ['robot_20arduino_20based_20hardware_20interface_3',['Hardware Components for Home Robot Arduino-based Hardware Interface',['../md_docs_2hardware-components.html',1,'']]],
+  ['robot_20navigation_20system_20command_20reference_4',['Home Robot Navigation System - Command Reference',['../md_docs_2commands.html',1,'']]],
+  ['robot_3a_20a_20ros_202_20jazzy_20package_20for_20service_20robotics_20course_20at_20university_20of_20león_5',['Home Robot: A ROS 2 Jazzy package for Service Robotics Course at University of León',['../index.html',1,'']]],
+  ['robotics_20course_20at_20university_20of_20león_6',['Home Robot: A ROS 2 Jazzy package for Service Robotics Course at University of León',['../index.html',1,'']]],
+  ['ros_202_20jazzy_20package_20for_20service_20robotics_20course_20at_20university_20of_20león_7',['Home Robot: A ROS 2 Jazzy package for Service Robotics Course at University of León',['../index.html',1,'']]],
+  ['running_20with_20docker_20recommended_8',['🐳 Running with Docker (Recommended)',['../md_docs_2commands.html#autotoc_md9',1,'']]]
 ];

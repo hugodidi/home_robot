@@ -95,7 +95,14 @@ $(function(){initNavTree('hierarchy.html','',''); });
 <div class="textblock">
 <p><a href="hierarchy.html">Go to the textual class hierarchy</a></p>
 </div><table border="0" cellspacing="10" cellpadding="0">
-<tr><td><img src="inherit_graph_0.png" border="0" usemap="#aNode" loading="lazy" alt=""/>
+<tr><td><img src="inherit_graph_0.png" border="0" usemap="#aActionState" loading="lazy" alt=""/>
+<map name="aActionState" id="aActionState">
+<area shape="rect" title=" " alt="" coords="5,13,95,38"/>
+<area shape="rect" href="classhome__robot__fsm_1_1fsm__patrol_1_1NavigateState.html" title="Sends a NavigateToPose goal to Nav2 and monitors progress." alt="" coords="143,5,289,46"/>
+<area shape="poly" title=" " alt="" coords="110,23,142,23,142,28,110,28"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_1.png" border="0" usemap="#aNode" loading="lazy" alt=""/>
 <map name="aNode" id="aNode">
 <area shape="rect" title=" " alt="" coords="5,177,58,202"/>
 <area shape="rect" href="classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html" title="ROS2 node that converts LiDAR scans to 8x8 occupancy grid for Arduino visualization." alt="" coords="150,5,294,46"/>
@@ -110,6 +117,21 @@ $(function(){initNavTree('hierarchy.html','',''); });
 <area shape="poly" title=" " alt="" coords="57,212,80,233,107,251,134,264,132,268,104,256,77,237,53,216"/>
 <area shape="rect" href="classhome__robot_1_1voice__controller_1_1VoiceController.html" title="ROS2 node for Spanish voice&#45;controlled robot navigation." alt="" coords="129,332,315,373"/>
 <area shape="poly" title=" " alt="" coords="44,216,67,268,85,294,107,317,130,330,127,335,104,321,81,298,63,271,39,218"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_2.png" border="0" usemap="#aState" loading="lazy" alt=""/>
+<map name="aState" id="aState">
+<area shape="rect" title=" " alt="" coords="5,144,58,169"/>
+<area shape="rect" href="classhome__robot__fsm_1_1fsm__patrol_1_1CheckStuckState.html" title="Evaluates if the path was canceled due to being physically stuck." alt="" coords="122,5,288,46"/>
+<area shape="poly" title=" " alt="" coords="44,129,69,92,104,57,126,44,128,49,107,61,73,95,49,132"/>
+<area shape="rect" href="classhome__robot__fsm_1_1fsm__patrol_1_1HandleErrorState.html" title="Handles navigation failures." alt="" coords="124,71,286,111"/>
+<area shape="poly" title=" " alt="" coords="71,136,105,122,139,109,140,114,107,127,73,141"/>
+<area shape="rect" href="classhome__robot__fsm_1_1fsm__patrol_1_1SelectWaypointState.html" title="Selects the next waypoint from the queue and writes it to the blackboard." alt="" coords="113,136,297,177"/>
+<area shape="poly" title=" " alt="" coords="73,154,112,154,112,159,73,159"/>
+<area shape="rect" href="classhome__robot__fsm_1_1fsm__patrol_1_1StuckRecoveryState.html" title="Executes a recovery maneuver (moves backwards)." alt="" coords="114,201,296,242"/>
+<area shape="poly" title=" " alt="" coords="73,172,107,186,140,198,139,203,105,191,71,177"/>
+<area shape="rect" href="classhome__robot__fsm_1_1fsm__patrol_1_1WaypointReachedState.html" title="Announces that the robot has reached a waypoint." alt="" coords="106,267,304,307"/>
+<area shape="poly" title=" " alt="" coords="49,181,73,218,107,252,128,264,126,268,104,256,69,221,44,184"/>
 </map>
 </td></tr>
 </table>

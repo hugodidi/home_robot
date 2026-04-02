@@ -19,5 +19,15 @@ var annotated_dup =
       [ "voice_controller", "namespacehome__robot_1_1voice__controller.html", [
         [ "VoiceController", "classhome__robot_1_1voice__controller_1_1VoiceController.html", "classhome__robot_1_1voice__controller_1_1VoiceController" ]
       ] ]
+    ] ],
+    [ "home_robot_fsm", "namespacehome__robot__fsm.html", [
+      [ "fsm_patrol", "namespacehome__robot__fsm_1_1fsm__patrol.html", [
+        [ "SelectWaypointState", "classhome__robot__fsm_1_1fsm__patrol_1_1SelectWaypointState.html", "classhome__robot__fsm_1_1fsm__patrol_1_1SelectWaypointState" ],
+        [ "NavigateState", "classhome__robot__fsm_1_1fsm__patrol_1_1NavigateState.html", "classhome__robot__fsm_1_1fsm__patrol_1_1NavigateState" ],
+        [ "WaypointReachedState", "classhome__robot__fsm_1_1fsm__patrol_1_1WaypointReachedState.html", "classhome__robot__fsm_1_1fsm__patrol_1_1WaypointReachedState" ],
+        [ "CheckStuckState", "classhome__robot__fsm_1_1fsm__patrol_1_1CheckStuckState.html", "classhome__robot__fsm_1_1fsm__patrol_1_1CheckStuckState" ],
+        [ "StuckRecoveryState", "classhome__robot__fsm_1_1fsm__patrol_1_1StuckRecoveryState.html", "classhome__robot__fsm_1_1fsm__patrol_1_1StuckRecoveryState" ],
+        [ "HandleErrorState", "classhome__robot__fsm_1_1fsm__patrol_1_1HandleErrorState.html", "classhome__robot__fsm_1_1fsm__patrol_1_1HandleErrorState" ]
+      ] ]
     ] ]
 ];

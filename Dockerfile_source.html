@@ -101,7 +101,7 @@ $(function(){initNavTree('Dockerfile_source.html','',''); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span># Switch to root to install system dependencies</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>USER root</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span># 1. Install hardware and voice dependencies</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span># 1. Install hardware, voice and YASMIN build dependencies</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>RUN apt-get update &amp;&amp; apt-get install -y \</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    alsa-utils \</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    libasound2-dev \</div>
@@ -126,54 +126,73 @@ $(function(){initNavTree('Dockerfile_source.html','',''); });
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    ros-jazzy-rmw-cyclonedds-cpp \</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    libasound2-plugins \</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    pulseaudio-utils \</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    &amp;&amp; rm -rf /var/lib/apt/lists/*</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span># Configure ALSA to use PulseAudio (the bridge with the host)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>RUN echo &#39;pcm.!default { type pulse }&#39; &gt; /etc/asound.conf &amp;&amp; \</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    echo &#39;ctl.!default { type pulse }&#39; &gt;&gt; /etc/asound.conf</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span># 2. Setup workspace</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>WORKDIR /home/ubuntu/home_robot</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    # YASMIN FSM build dependencies</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    pybind11-dev \</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    git \</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    &amp;&amp; rm -rf /var/lib/apt/lists/*</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span># Configure ALSA to use PulseAudio (the bridge with the host)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>RUN echo &#39;pcm.!default { type pulse }&#39; &gt; /etc/asound.conf &amp;&amp; \</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    echo &#39;ctl.!default { type pulse }&#39; &gt;&gt; /etc/asound.conf</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span># Cache optimization: download voice models BEFORE copying the entire code</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span># This way, the 150MB download is not repeated if a Python line is changed</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>COPY scripts/install_voice_models.sh scripts/</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>RUN chmod +x scripts/install_voice_models.sh &amp;&amp; \</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    ./scripts/install_voice_models.sh</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span># 3. Install Python dependencies (before code for better stability)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>RUN pip3 install --break-system-packages \</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    vosk \</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    sounddevice \</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    pyserial \</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    pyyaml</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span># 4. Copy the rest of the project</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>COPY . .</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span># Ensure ubuntu user has audio and serial permissions</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>RUN usermod -aG audio,dialout ubuntu</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span># Ensure ubuntu user owns the workspace folder</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>RUN chown -R ubuntu:ubuntu /home/ubuntu/home_robot</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span># 5. Build ROS 2 Workspace</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>RUN . /opt/ros/jazzy/setup.sh &amp;&amp; \</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    cd ros2_ws &amp;&amp; \</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    rm -rf build install log &amp;&amp; \</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    colcon build --symlink-install</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span># 6. Environment configuration</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>ENV PROJECT_ROOT=/home/ubuntu/home_robot</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span># Source setups automatically in ubuntu user&#39;s .bashrc</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>RUN echo &quot;source /opt/ros/jazzy/setup.bash&quot; &gt;&gt; /home/ubuntu/.bashrc &amp;&amp; \</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    echo &quot;source /home/ubuntu/home_robot/ros2_ws/install/setup.bash&quot; &gt;&gt; /home/ubuntu/.bashrc &amp;&amp; \</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    echo &quot;export PROJECT_ROOT=/home/ubuntu/home_robot&quot; &gt;&gt; /home/ubuntu/.bashrc</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span># Let the base image&#39;s ENTRYPOINT handle permissions and startup</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span># We don&#39;t force &#39;ubuntu&#39; user here to avoid permission errors in logs</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span># 2. Setup workspace</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>WORKDIR /home/ubuntu/home_robot</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span># Cache optimization: download voice models BEFORE copying the entire code</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span># This way, the 150MB download is not repeated if a Python line is changed</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>COPY scripts/install_voice_models.sh scripts/</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>RUN chmod +x scripts/install_voice_models.sh &amp;&amp; \</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ./scripts/install_voice_models.sh</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span># 3. Install Python dependencies (before code for better stability)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>RUN pip3 install --break-system-packages --ignore-installed \</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    vosk \</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    sounddevice \</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    pyserial \</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    pyyaml \</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    # YASMIN Viewer web UI dependencies</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    flask \</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    flask-socketio \</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    waitress \</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    expiringdict</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span># 4. Copy the rest of the project</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>COPY . .</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span># Ensure ubuntu user has audio and serial permissions</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>RUN usermod -aG audio,dialout ubuntu</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span># Ensure ubuntu user owns the workspace folder</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>RUN chown -R ubuntu:ubuntu /home/ubuntu/home_robot</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span># 5. Clone and build YASMIN in a separate workspace (/opt/yasmin_ws)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>#    We do this outside of home_robot because the host mounts its own ros2_ws at runtime.</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>RUN mkdir -p /opt/yasmin_ws/src &amp;&amp; \</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    cd /opt/yasmin_ws/src &amp;&amp; \</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    git clone --depth 1 https://github.com/uleroboticsgroup/yasmin.git &amp;&amp; \</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    cd /opt/yasmin_ws &amp;&amp; \</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    . /opt/ros/jazzy/setup.sh &amp;&amp; \</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    colcon build --symlink-install --cmake-args -DBUILD_TESTING=OFF</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span># 6. Build ROS 2 Workspace (home_robot + home_robot_fsm)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>RUN . /opt/ros/jazzy/setup.sh &amp;&amp; \</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    . /opt/yasmin_ws/install/setup.sh &amp;&amp; \</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    cd /home/ubuntu/home_robot/ros2_ws &amp;&amp; \</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    rm -rf build install log &amp;&amp; \</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    colcon build --symlink-install --cmake-args -DBUILD_TESTING=OFF</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span># 7. Environment configuration</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>ENV PROJECT_ROOT=/home/ubuntu/home_robot</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span># Source setups automatically in ubuntu user&#39;s .bashrc</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>RUN echo &quot;source /opt/ros/jazzy/setup.bash&quot; &gt;&gt; /home/ubuntu/.bashrc &amp;&amp; \</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    echo &quot;source /opt/yasmin_ws/install/setup.bash&quot; &gt;&gt; /home/ubuntu/.bashrc &amp;&amp; \</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    echo &quot;source /home/ubuntu/home_robot/ros2_ws/install/setup.bash&quot; &gt;&gt; /home/ubuntu/.bashrc &amp;&amp; \</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    echo &quot;export PROJECT_ROOT=/home/ubuntu/home_robot&quot; &gt;&gt; /home/ubuntu/.bashrc</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span># Let the base image&#39;s ENTRYPOINT handle permissions and startup</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span># We don&#39;t force &#39;ubuntu&#39; user here to avoid permission errors in logs</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

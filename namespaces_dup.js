@@ -1,6 +1,10 @@
 var namespaces_dup =
 [
+    [ "fsm_patrol", "namespacefsm__patrol.html", [
+      [ "generate_launch_description", "namespacefsm__patrol.html#a7251a6c7e1729905032d4a03312d5f41", null ]
+    ] ],
     [ "home_robot", "namespacehome__robot.html", "namespacehome__robot" ],
+    [ "home_robot_fsm", "namespacehome__robot__fsm.html", "namespacehome__robot__fsm" ],
     [ "main_nav", "namespacemain__nav.html", [
       [ "generate_launch_description", "namespacemain__nav.html#a3d7e9a5c82613332116d71c3495b211e", null ]
     ] ],
@@ -21,7 +25,7 @@ var namespaces_dup =
       [ "maintainer", "namespacesetup.html#aa1a7cf9bbf76004bb72697dc00bbee9d", null ],
       [ "maintainer_email", "namespacesetup.html#a92a81adbfdd219564d5246ce8d77f869", null ],
       [ "name", "namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f", null ],
-      [ "package_name", "namespacesetup.html#a69903e4f05cebc9e005b22b36f5724eb", null ],
+      [ "package_name", "namespacesetup.html#ae1914c6379853aac13554579d9b6b4ec", null ],
       [ "packages", "namespacesetup.html#aff2375a361fd5865c77bd9aa093be747", null ],
       [ "version", "namespacesetup.html#a2aa722b36a933088812b50ea79b97a5c", null ],
       [ "zip_safe", "namespacesetup.html#a13510753661cb74083a0c664db11dde9", null ]

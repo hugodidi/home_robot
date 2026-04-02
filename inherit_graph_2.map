@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,144,58,169"/>
+<area shape="rect" id="Node000001" href="$classhome__robot__fsm_1_1fsm__patrol_1_1CheckStuckState.html" title="Evaluates if the path was canceled due to being physically stuck." alt="" coords="122,5,288,46"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="44,129,69,92,104,57,126,44,128,49,107,61,73,95,49,132"/>
+<area shape="rect" id="Node000002" href="$classhome__robot__fsm_1_1fsm__patrol_1_1HandleErrorState.html" title="Handles navigation failures." alt="" coords="124,71,286,111"/>
+<area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="71,136,105,122,139,109,140,114,107,127,73,141"/>
+<area shape="rect" id="Node000003" href="$classhome__robot__fsm_1_1fsm__patrol_1_1SelectWaypointState.html" title="Selects the next waypoint from the queue and writes it to the blackboard." alt="" coords="113,136,297,177"/>
+<area shape="poly" id="edge10_Node000000_Node000003" title=" " alt="" coords="73,154,112,154,112,159,73,159"/>
+<area shape="rect" id="Node000004" href="$classhome__robot__fsm_1_1fsm__patrol_1_1StuckRecoveryState.html" title="Executes a recovery maneuver (moves backwards)." alt="" coords="114,201,296,242"/>
+<area shape="poly" id="edge11_Node000000_Node000004" title=" " alt="" coords="73,172,107,186,140,198,139,203,105,191,71,177"/>
+<area shape="rect" id="Node000005" href="$classhome__robot__fsm_1_1fsm__patrol_1_1WaypointReachedState.html" title="Announces that the robot has reached a waypoint." alt="" coords="106,267,304,307"/>
+<area shape="poly" id="edge12_Node000000_Node000005" title=" " alt="" coords="49,181,73,218,107,252,128,264,126,268,104,256,69,221,44,184"/>
+</map>

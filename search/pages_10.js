@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['navigation_20simulation_20inside_20container_0',['🚀 Navigation &amp;amp; Simulation (Inside Container)',['../md_docs_2commands.html#autotoc_md12',1,'']]],
-  ['navigation_20stack_1',['2.1 Start Full Navigation Stack',['../md_docs_2commands.html#autotoc_md13',1,'']]],
-  ['navigation_20system_20command_20reference_2',['Home Robot Navigation System - Command Reference',['../md_docs_2commands.html',1,'']]]
+  ['main_5fnav_20launch_20py_20_3a_0',['After launching the navigation stack (main_nav.launch.py):',['../namespacehome__robot__fsm_1_1fsm__patrol.html#autotoc_md39',1,'']]],
+  ['manual_20control_20teleop_1',['4.3 Manual Control (Teleop)',['../md_docs_2commands.html#autotoc_md24',1,'']]],
+  ['map_2',['4.2 Save Map',['../md_docs_2commands.html#autotoc_md23',1,'']]]
 ];

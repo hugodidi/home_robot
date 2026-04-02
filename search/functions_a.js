@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['read_5fwaypoints_0',['read_waypoints',['../namespacehome__robot_1_1execute__patrol.html#a3c7015ee56493648c0c8aaaccd8604ae',1,'home_robot::execute_patrol']]],
-  ['run_1',['run',['../classhome__robot_1_1navigation__manager_1_1NavigationManager.html#ac789926bd2e1a16fd7bee96cce52a4c8',1,'home_robot::navigation_manager::NavigationManager']]]
+  ['patrol_5fevent_5fcallback_0',['patrol_event_callback',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#af185a2dbd0e244a9ce17cefef37d38d5',1,'home_robot::voice_controller::VoiceController']]],
+  ['process_5fcommand_1',['process_command',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#a7fcad39c0810fc863348b3d8f9a24050',1,'home_robot::voice_controller::VoiceController']]]
 ];

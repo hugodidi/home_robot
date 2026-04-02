@@ -25,27 +25,41 @@
 var NAVTREE =
 [
   [ "Home Robot: A ROS 2 Jazzy package for Service Robotics Course at University of León", "index.html", [
-    [ "Available Commands", "index.html#autotoc_md5", null ],
+    [ "Available Commands", "index.html#autotoc_md6", null ],
     [ "Home Robot Navigation System - Command Reference", "md_docs_2commands.html", [
       [ "Requirements", "index.html#autotoc_md2", null ],
       [ "Quick start (Docker)", "index.html#autotoc_md3", null ],
       [ "Hardware (Arduino)", "index.html#autotoc_md4", null ],
-      [ "🐳 Running with Docker (Recommended)", "md_docs_2commands.html#autotoc_md8", [
-        [ "1. Start/Stop the System", "md_docs_2commands.html#autotoc_md9", null ],
-        [ "2. Access the VNC Desktop", "md_docs_2commands.html#autotoc_md10", null ]
+      [ "FSM Navigation (YASMIN)", "index.html#autotoc_md5", null ],
+      [ "🐳 Running with Docker (Recommended)", "md_docs_2commands.html#autotoc_md9", [
+        [ "1. Start/Stop the System", "md_docs_2commands.html#autotoc_md10", null ],
+        [ "2. Access the VNC Desktop", "md_docs_2commands.html#autotoc_md11", null ]
       ] ],
-      [ "🚀 Navigation &amp; Simulation (Inside Container)", "md_docs_2commands.html#autotoc_md12", [
-        [ "2.1 Start Full Navigation Stack", "md_docs_2commands.html#autotoc_md13", null ],
-        [ "2.2 Overhead Camera (Orthographic View)", "md_docs_2commands.html#autotoc_md14", null ]
+      [ "🚀 Navigation &amp; Simulation (Inside Container)", "md_docs_2commands.html#autotoc_md13", [
+        [ "2.1 Start Full Navigation Stack", "md_docs_2commands.html#autotoc_md14", null ],
+        [ "2.2 Overhead Camera (Orthographic View)", "md_docs_2commands.html#autotoc_md15", null ]
       ] ],
-      [ "🎤 Voice Control &amp; Patrols", "md_docs_2commands.html#autotoc_md16", [
-        [ "3.1 Launch Voice Controller", "md_docs_2commands.html#autotoc_md17", null ],
-        [ "3.2 Automated Waypoint Patrol", "md_docs_2commands.html#autotoc_md18", null ]
+      [ "🎤 Voice Control &amp; Patrols", "md_docs_2commands.html#autotoc_md17", [
+        [ "3.1 Launch Voice Controller", "md_docs_2commands.html#autotoc_md18", null ],
+        [ "3.2 Automated Waypoint Patrol (Legacy)", "md_docs_2commands.html#autotoc_md19", null ],
+        [ "3.3 Advanced FSM Patrol (YASMIN)", "md_docs_2commands.html#autotoc_md20", null ]
       ] ],
-      [ "🛠️ Hardware &amp; Tools", "md_docs_2commands.html#autotoc_md19", [
-        [ "4.1 LiDAR Grid (Arduino Interface)", "md_docs_2commands.html#autotoc_md20", null ],
-        [ "4.2 Save Map", "md_docs_2commands.html#autotoc_md21", null ],
-        [ "4.3 Manual Control (Teleop)", "md_docs_2commands.html#autotoc_md22", null ]
+      [ "🛠️ Hardware &amp; Tools", "md_docs_2commands.html#autotoc_md21", [
+        [ "4.1 LiDAR Grid (Arduino Interface)", "md_docs_2commands.html#autotoc_md22", null ],
+        [ "4.2 Save Map", "md_docs_2commands.html#autotoc_md23", null ],
+        [ "4.3 Manual Control (Teleop)", "md_docs_2commands.html#autotoc_md24", null ]
+      ] ]
+    ] ],
+    [ "FSM Patrol Architecture (YASMIN)", "md_docs_2fsm__info.html", [
+      [ "🧭 General Flow", "md_docs_2fsm__info.html#autotoc_md27", [
+        [ "1. <span class=\"tt\">SELECT_WAYPOINT</span>", "md_docs_2fsm__info.html#autotoc_md28", null ],
+        [ "2. <span class=\"tt\">NAVIGATE</span>", "md_docs_2fsm__info.html#autotoc_md29", null ],
+        [ "3. <span class=\"tt\">WAYPOINT_REACHED</span>", "md_docs_2fsm__info.html#autotoc_md30", null ],
+        [ "4. <span class=\"tt\">HANDLE_ERROR</span>", "md_docs_2fsm__info.html#autotoc_md31", null ]
+      ] ],
+      [ "🚧 Active Anti-Stuck System", "md_docs_2fsm__info.html#autotoc_md33", [
+        [ "Problem", "md_docs_2fsm__info.html#autotoc_md34", null ],
+        [ "The Solution: <span class=\"tt\">CHECK_STUCK</span> &amp; <span class=\"tt\">STUCK_RECOVERY</span>", "md_docs_2fsm__info.html#autotoc_md35", null ]
       ] ]
     ] ],
     [ "Hardware Components for Home Robot Arduino-based Hardware Interface", "md_docs_2hardware-components.html", null ],
@@ -82,7 +96,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Dockerfile.html",
-"namespaceslam__system.html#ade6754a473f119615c3d9a82880e6f5b"
+"index.html#autotoc_md6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

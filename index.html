@@ -138,7 +138,19 @@ Hardware (Arduino)</h2>
 <p>If you have the physical <a class="el" href="md_docs_2hardware-components.html" title="Hardware Components for Home Robot Arduino-based Hardware Interface">Arduino hardware</a>, just plug it in and launch the LiDAR grid node from within the container:</p>
 <div class="fragment"><div class="line">ros2 run home_robot lidar_grid_node --port /dev/{your_arduino_port}</div>
 </div><!-- fragment --><dl class="section remark"><dt>Remarks</dt><dd>You can check the active usb ports with the command <span class="tt">ls /dev/tty*</span> or <span class="tt">ls /dev/ttyACM*</span>.</dd></dl>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+FSM Navigation (YASMIN)</h2>
+<p>You can launch an autonomous <b>Finite State Machine (FSM)</b> patrol. This modular feature, implemented with <b><a href="https://github.com/uleroboticsgroup/yasmin">YASMIN</a></b>, manages waypoint transitions and handles errors.</p>
+<ol type="1">
+<li><b>Launch the navigation stack</b> (as described in Quick Start).</li>
+<li><b>Launch the FSM Patrol</b> (in a new terminal): <span class="tt">bash
+    ./scripts/launch_fsm_patrol.sh [--random] [--skip-errors]
+    </span></li>
+<li><b>Visualize the FSM</b>: The YASMIN Viewer will automatically open in Firefox (<span class="tt"><a href="http://localhost:5000">http://localhost:5000</a></span>) to display the live state transitions.</li>
+</ol>
+<dl class="section note"><dt>Note</dt><dd>The FSM publishes events to the voice controller. If <span class="tt">voice_controller</span> is running, the robot will announce its arrival at each waypoint.</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><b>Want to know how it works under the hood?</b> Check out the <a class="el" href="md_docs_2fsm__info.html" title="FSM Patrol Architecture (YASMIN)">FSM Architecture Documentation</a> for a detailed breakdown of each state!</dd></dl>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Available Commands</h1>
 <p>See the <a class="el" href="md_docs_2commands.html" title="Home Robot Navigation System - Command Reference">commands documentation</a> for a detailed explanation of the available commands and how to use them. </p>
 </div></div><!-- PageDoc -->

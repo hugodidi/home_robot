@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['jazzy_20package_20for_20service_20robotics_20course_20at_20university_20of_20león_0',['Home Robot: A ROS 2 Jazzy package for Service Robotics Course at University of León',['../index.html',1,'']]]
+  ['inside_20container_0',['🚀 Navigation &amp;amp; Simulation (Inside Container)',['../md_docs_2commands.html#autotoc_md13',1,'']]],
+  ['interface_1',['Interface',['../md_docs_2commands.html#autotoc_md22',1,'4.1 LiDAR Grid (Arduino Interface)'],['../md_docs_2hardware-components.html',1,'Hardware Components for Home Robot Arduino-based Hardware Interface']]],
+  ['is_20activated_2',['Or directly (ensure venv is activated)',['../namespacehome__robot_1_1voice__controller.html#autotoc_md38',1,'']]]
 ];

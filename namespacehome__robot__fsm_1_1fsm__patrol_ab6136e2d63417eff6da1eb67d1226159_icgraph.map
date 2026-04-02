@@ -1,0 +1,6 @@
+<map id="home_robot_fsm.fsm_patrol.load_waypoints" name="home_robot_fsm.fsm_patrol.load_waypoints">
+<area shape="rect" id="Node000001" title="Load waypoints from the home_robot package&#39;s waypoints.yaml." alt="" coords="197,29,349,70"/>
+<area shape="rect" id="Node000002" href="$namespacehome__robot__fsm_1_1fsm__patrol.html#aa9d946d679838f73b29ff3a5e822cb84" title="Entry point for the FSM patrol node." alt="" coords="5,29,149,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,52,149,52,149,47,181,47"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="109,16,97,10,77,8,58,10,47,15,43,20,45,28,40,29,38,19,44,10,57,5,77,3,98,5,111,11"/>
+</map>

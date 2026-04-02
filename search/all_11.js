@@ -1,18 +1,12 @@
 var searchData=
 [
-  ['name_0',['name',['../namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f',1,'setup']]],
-  ['nav_1',['nav',['../classhome__robot_1_1navigation__service_1_1NavigationService.html#a0c8f79b0db085c325e1fc496346c35ce',1,'home_robot.navigation_service.NavigationService.nav'],['../classhome__robot_1_1voice__controller_1_1VoiceController.html#a1e44249d4556f36d2853bf78c2b131c1',1,'home_robot.voice_controller.VoiceController.nav']]],
-  ['nav_5fthread_2',['nav_thread',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#ac106e87efb2a1afa27b19af6efbdcaf5',1,'home_robot::voice_controller::VoiceController']]],
-  ['navigation_20simulation_20inside_20container_3',['🚀 Navigation &amp;amp; Simulation (Inside Container)',['../md_docs_2commands.html#autotoc_md12',1,'']]],
-  ['navigation_20stack_4',['2.1 Start Full Navigation Stack',['../md_docs_2commands.html#autotoc_md13',1,'']]],
-  ['navigation_20system_20command_20reference_5',['Home Robot Navigation System - Command Reference',['../md_docs_2commands.html',1,'']]],
-  ['navigation_5fmanager_2epy_6',['navigation_manager.py',['../navigation__manager_8py.html',1,'']]],
-  ['navigation_5fservice_2epy_7',['navigation_service.py',['../navigation__service_8py.html',1,'']]],
-  ['navigation_5fsystem_8',['navigation_system',['../namespacenavigation__system.html',1,'']]],
-  ['navigation_5fsystem_2elaunch_2epy_9',['navigation_system.launch.py',['../navigation__system_8launch_8py.html',1,'']]],
-  ['navigationmanager_10',['NavigationManager',['../classhome__robot_1_1navigation__manager_1_1NavigationManager.html',1,'home_robot::navigation_manager']]],
-  ['navigationservice_11',['NavigationService',['../classhome__robot_1_1navigation__service_1_1NavigationService.html',1,'home_robot::navigation_service']]],
-  ['navigator_12',['navigator',['../classhome__robot_1_1navigation__manager_1_1NavigationManager.html#af16720331aadc6dc3c245114b3a7e6b9',1,'home_robot::navigation_manager::NavigationManager']]],
-  ['navigator_5fglobal_13',['navigator_global',['../namespacehome__robot_1_1execute__patrol.html#abf413c9dde35b5cad457d0ff71f84a12',1,'home_robot::execute_patrol']]],
-  ['numero_5fmap_14',['numero_map',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#a7488979d9e160f68f4803344c89e6ed8',1,'home_robot::voice_controller::VoiceController']]]
+  ['main_0',['main',['../namespacehome__robot_1_1execute__patrol.html#aa17ea8c61d01a25ee6ff97e97d94f2b8',1,'home_robot.execute_patrol.main()'],['../namespacehome__robot_1_1lidar__grid__node.html#aa385ba6543e6d5ab1b45cf1977c4c90b',1,'home_robot.lidar_grid_node.main()'],['../namespacehome__robot_1_1navigation__manager.html#a98eda7b6472b9ded25c125c2fc194ac3',1,'home_robot.navigation_manager.main()'],['../namespacehome__robot_1_1navigation__service.html#a35744ac088466e790626d83fc829b8d7',1,'home_robot.navigation_service.main()'],['../namespacehome__robot_1_1odom__to__tf.html#a8ed092804ecfc8615a8fb474d471927a',1,'home_robot.odom_to_tf.main()'],['../namespacehome__robot_1_1overhead__cam__service.html#af3d5be0269baf65341166eaf002cec09',1,'home_robot.overhead_cam_service.main()'],['../namespacehome__robot_1_1voice__controller.html#afc631035967967a387a4c940c60545d7',1,'home_robot.voice_controller.main()'],['../namespacehome__robot__fsm_1_1fsm__patrol.html#aa9d946d679838f73b29ff3a5e822cb84',1,'home_robot_fsm.fsm_patrol.main()']]],
+  ['main_5fnav_1',['main_nav',['../namespacemain__nav.html',1,'']]],
+  ['main_5fnav_20launch_20py_20_3a_2',['After launching the navigation stack (main_nav.launch.py):',['../namespacehome__robot__fsm_1_1fsm__patrol.html#autotoc_md39',1,'']]],
+  ['main_5fnav_2elaunch_2epy_3',['main_nav.launch.py',['../main__nav_8launch_8py.html',1,'']]],
+  ['maintainer_4',['maintainer',['../namespacesetup.html#aa1a7cf9bbf76004bb72697dc00bbee9d',1,'setup']]],
+  ['maintainer_5femail_5',['maintainer_email',['../namespacesetup.html#a92a81adbfdd219564d5246ce8d77f869',1,'setup']]],
+  ['manual_20control_20teleop_6',['4.3 Manual Control (Teleop)',['../md_docs_2commands.html#autotoc_md24',1,'']]],
+  ['map_7',['4.2 Save Map',['../md_docs_2commands.html#autotoc_md23',1,'']]],
+  ['mode_8',['mode',['../classhome__robot_1_1navigation__manager_1_1NavigationManager.html#ac02eaa18fb3b4f8b08e1293b79a243a9',1,'home_robot::navigation_manager::NavigationManager']]]
 ];

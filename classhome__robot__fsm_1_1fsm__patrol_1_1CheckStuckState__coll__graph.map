@@ -1,0 +1,5 @@
+<map id="home_robot_fsm.fsm_patrol.CheckStuckState" name="home_robot_fsm.fsm_patrol.CheckStuckState">
+<area shape="rect" id="Node000001" title="Evaluates if the path was canceled due to being physically stuck." alt="" coords="5,120,160,221"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="62,5,104,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,86,85,120,80,120,80,86"/>
+</map>

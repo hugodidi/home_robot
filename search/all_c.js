@@ -1,20 +1,9 @@
 var searchData=
 [
-  ['half_5fgrid_0',['half_grid',['../classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html#ab9b15467438bd322454dfa16ddf63910',1,'home_robot::lidar_grid_node::LidarGridNode']]],
-  ['hardware_20arduino_1',['Hardware (Arduino)',['../index.html#autotoc_md4',1,'']]],
-  ['hardware_20components_20for_20home_20robot_20arduino_20based_20hardware_20interface_2',['Hardware Components for Home Robot Arduino-based Hardware Interface',['../md_docs_2hardware-components.html',1,'']]],
-  ['hardware_20interface_3',['Hardware Components for Home Robot Arduino-based Hardware Interface',['../md_docs_2hardware-components.html',1,'']]],
-  ['hardware_20tools_4',['🛠️ Hardware &amp;amp; Tools',['../md_docs_2commands.html#autotoc_md19',1,'']]],
-  ['hardware_2dcomponents_2emd_5',['hardware-components.md',['../hardware-components_8md.html',1,'']]],
-  ['home_20robot_20arduino_20based_20hardware_20interface_6',['Hardware Components for Home Robot Arduino-based Hardware Interface',['../md_docs_2hardware-components.html',1,'']]],
-  ['home_20robot_20navigation_20system_20command_20reference_7',['Home Robot Navigation System - Command Reference',['../md_docs_2commands.html',1,'']]],
-  ['home_20robot_3a_20a_20ros_202_20jazzy_20package_20for_20service_20robotics_20course_20at_20university_20of_20león_8',['Home Robot: A ROS 2 Jazzy package for Service Robotics Course at University of León',['../index.html',1,'']]],
-  ['home_5frobot_9',['home_robot',['../namespacehome__robot.html',1,'']]],
-  ['home_5frobot_3a_3aexecute_5fpatrol_10',['execute_patrol',['../namespacehome__robot_1_1execute__patrol.html',1,'home_robot']]],
-  ['home_5frobot_3a_3alidar_5fgrid_5fnode_11',['lidar_grid_node',['../namespacehome__robot_1_1lidar__grid__node.html',1,'home_robot']]],
-  ['home_5frobot_3a_3anavigation_5fmanager_12',['navigation_manager',['../namespacehome__robot_1_1navigation__manager.html',1,'home_robot']]],
-  ['home_5frobot_3a_3anavigation_5fservice_13',['navigation_service',['../namespacehome__robot_1_1navigation__service.html',1,'home_robot']]],
-  ['home_5frobot_3a_3aodom_5fto_5ftf_14',['odom_to_tf',['../namespacehome__robot_1_1odom__to__tf.html',1,'home_robot']]],
-  ['home_5frobot_3a_3aoverhead_5fcam_5fservice_15',['overhead_cam_service',['../namespacehome__robot_1_1overhead__cam__service.html',1,'home_robot']]],
-  ['home_5frobot_3a_3avoice_5fcontroller_16',['voice_controller',['../namespacehome__robot_1_1voice__controller.html',1,'home_robot']]]
+  ['general_20flow_0',['🧭 General Flow',['../md_docs_2fsm__info.html#autotoc_md27',1,'']]],
+  ['generate_5flaunch_5fdescription_1',['generate_launch_description',['../namespacemain__nav.html#a3d7e9a5c82613332116d71c3495b211e',1,'main_nav.generate_launch_description()'],['../namespacenavigation__system.html#a4f2bcd6ae3f528b3758eb6d7ac36ffba',1,'navigation_system.generate_launch_description()'],['../namespaceproject.html#a926bc14500331e1f5d8dc711ebd1fa69',1,'project.generate_launch_description()'],['../namespaceslam__system.html#ade6754a473f119615c3d9a82880e6f5b',1,'slam_system.generate_launch_description()'],['../namespaceworld__view.html#a2349ac7160aafc24282f4affb4bc2b96',1,'world_view.generate_launch_description()'],['../namespacefsm__patrol.html#a7251a6c7e1729905032d4a03312d5f41',1,'fsm_patrol.generate_launch_description()']]],
+  ['go_5fto_2',['go_to',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#a63896c41ed5ac99ecd19cfcd6744f613',1,'home_robot::voice_controller::VoiceController']]],
+  ['go_5fto_5fpose_5fcallback_3',['go_to_pose_callback',['../classhome__robot_1_1navigation__service_1_1NavigationService.html#a11b1f4aa02d06acf9d6c9f59e2a4d32a',1,'home_robot::navigation_service::NavigationService']]],
+  ['grid_20arduino_20interface_4',['4.1 LiDAR Grid (Arduino Interface)',['../md_docs_2commands.html#autotoc_md22',1,'']]],
+  ['grid_5fsize_5',['grid_size',['../classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html#a8d147875f9b547fba96d1fdbd03d5d51',1,'home_robot::lidar_grid_node::LidarGridNode']]]
 ];

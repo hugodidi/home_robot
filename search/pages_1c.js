@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🚀_20navigation_20simulation_20inside_20container_0',['🚀 Navigation &amp;amp; Simulation (Inside Container)',['../md_docs_2commands.html#autotoc_md12',1,'']]]
+  ['🎤_20voice_20control_20patrols_0',['🎤 Voice Control &amp;amp; Patrols',['../md_docs_2commands.html#autotoc_md17',1,'']]]
 ];
