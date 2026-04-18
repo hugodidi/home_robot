@@ -5,7 +5,7 @@
 
 ---
 
-![Home Robot](docs/assets/home_robot_banner.jpg)
+https://github.com/user-attachments/assets/1793c9b5-bdd8-4fe1-9493-2bea7d16d737
 
 ---
 
