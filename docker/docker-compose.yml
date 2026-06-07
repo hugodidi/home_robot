@@ -15,6 +15,7 @@ services:
       - "5901:5901" # VNC Port
       - "6080:80" # noVNC Port (Browser)
       - "5000:5000" # YASMIN Viewer (FSM visualization)
+      - "1667:1667" # Groot2 live BT monitor
     devices:
       - /dev/dri:/dev/dri # Hardware acceleration (GPU)
       - /dev:/dev # Access to Serial/USB devices

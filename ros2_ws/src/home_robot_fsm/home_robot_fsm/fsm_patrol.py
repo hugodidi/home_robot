@@ -118,16 +118,19 @@ class SelectWaypointState(State):
         super().__init__(['navigate', 'finished'])
 
     def execute(self, blackboard: Blackboard) -> str:
-        wp_queue = blackboard['wp_queue']
+        wp_names = blackboard['wp_names']
         wp_dict = blackboard['wp_dict']
+        wp_index = int(blackboard['wp_index'])
 
-        if not wp_queue:
+        if wp_index >= len(wp_names):
             yasmin.YASMIN_LOG_INFO(
                 '🏁 All waypoints visited! Patrol complete.')
             return 'finished'
 
-        # Pop the next waypoint name from the queue
-        wp_name = wp_queue.pop(0)
+        # Advance by index instead of mutating a list in-place. This makes the
+        # current patrol position explicit in the blackboard across transitions.
+        wp_name = wp_names[wp_index]
+        blackboard['wp_index'] = wp_index + 1
         wp_data = wp_dict[wp_name]
 
         # Store in blackboard for the NavigateState
@@ -137,8 +140,7 @@ class SelectWaypointState(State):
         blackboard['current_wp_theta'] = float(wp_data['theta'])
 
         total = blackboard['wp_total']
-        remaining = len(wp_queue)
-        idx = total - remaining
+        idx = wp_index + 1
         yasmin.YASMIN_LOG_INFO(
             f'[{idx}/{total}] 🎯 Selected waypoint: {wp_name} '
             f'(x={wp_data["x"]}, y={wp_data["y"]})')
@@ -473,7 +475,8 @@ def main() -> None:
     # Prepare blackboard
     blackboard = Blackboard()
     blackboard['wp_dict'] = wp_dict
-    blackboard['wp_queue'] = list(wp_names)  # mutable copy
+    blackboard['wp_names'] = list(wp_names)
+    blackboard['wp_index'] = 0
     blackboard['wp_total'] = len(wp_names)
     blackboard['skip_errors'] = skip_errors
 

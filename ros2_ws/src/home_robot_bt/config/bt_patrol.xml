@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Custom Home Robot patrol Behavior Tree.
+
+  This XML documents the tree executed by home_robot_bt/bt_patrol.py. The tree
+  is not the Nav2 internal navigation tree: Nav2 is used only as the low-level
+  NavigateToPose action backend.
+-->
+<root BTCPP_format="4" main_tree_to_execute="HomeRobotPatrol">
+  <BehaviorTree ID="HomeRobotPatrol">
+    <PatrolLoop name="PatrolLoop">
+      <Sequence name="PatrolOneWaypoint">
+        <SelectWaypoint name="SelectWaypoint"/>
+        <Fallback name="NavigateOrRecover">
+          <Sequence name="PrimaryNavigation">
+            <NavigateToWaypoint name="NavigatePrimary"/>
+            <PublishArrival name="PublishArrival"/>
+          </Sequence>
+          <Sequence name="RecoveryNavigation">
+            <BackUpRecovery name="BackUpRecovery"/>
+            <NavigateToWaypoint name="NavigateRetry"/>
+            <PublishArrival name="PublishArrivalAfterRetry"/>
+          </Sequence>
+          <HandleFailure name="HandleFailure"/>
+        </Fallback>
+      </Sequence>
+    </PatrolLoop>
+  </BehaviorTree>
+
+  <TreeNodesModel>
+    <Action ID="SelectWaypoint" editable="true"/>
+    <Action ID="NavigateToWaypoint" editable="true"/>
+    <Action ID="BackUpRecovery" editable="true"/>
+    <Action ID="PublishArrival" editable="true"/>
+    <Action ID="HandleFailure" editable="true"/>
+    <Decorator ID="PatrolLoop" editable="true"/>
+  </TreeNodesModel>
+</root>

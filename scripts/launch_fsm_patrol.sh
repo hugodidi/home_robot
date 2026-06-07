@@ -29,13 +29,11 @@ if [ -f "/opt/yasmin_ws/install/setup.bash" ]; then
     source /opt/yasmin_ws/install/setup.bash
 fi
 
-# Construcción e instalación si es necesario
-if [ ! -d "${WS}/install/home_robot_fsm" ]; then
-    echo "⏳ Building home_robot_fsm package..."
-    cd "${WS}"
-    colcon build --symlink-install --packages-select home_robot_fsm
-    cd "${PROJECT_ROOT}"
-fi
+# Construcción del paquete FSM para evitar ejecutar una instalación obsoleta
+echo "⏳ Building home_robot_fsm package..."
+cd "${WS}"
+colcon build --symlink-install --packages-select home_robot_fsm
+cd "${PROJECT_ROOT}"
 
 # Sourcing del espacio de trabajo
 if [ -f "${WS}/install/setup.bash" ]; then

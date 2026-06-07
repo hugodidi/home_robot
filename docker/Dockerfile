@@ -17,11 +17,26 @@ RUN apt-get update && apt-get install -y \
     curl \
     unzip \
     tar \
+    libfuse2t64 \
     python3-serial \
     vlc-bin \
     # Project-specific ROS 2 dependencies
     ros-jazzy-nav2-bringup \
     ros-jazzy-nav2-simple-commander \
+    ros-jazzy-behaviortree-cpp \
+    ros-jazzy-plansys2-bringup \
+    ros-jazzy-plansys2-core \
+    ros-jazzy-plansys2-domain-expert \
+    ros-jazzy-plansys2-problem-expert \
+    ros-jazzy-plansys2-planner \
+    ros-jazzy-plansys2-executor \
+    ros-jazzy-plansys2-popf-plan-solver \
+    ros-jazzy-popf \
+    ros-jazzy-plansys2-terminal \
+    ros-jazzy-plansys2-tools \
+    ros-jazzy-plansys2-bt-actions \
+    ros-jazzy-plansys2-support-py \
+    ros-jazzy-plansys2-msgs \
     ros-jazzy-slam-toolbox \
     ros-jazzy-ros-gz \
     ros-jazzy-joint-state-publisher \
@@ -64,6 +79,10 @@ RUN pip3 install --break-system-packages --ignore-installed \
 
 # 4. Copy the rest of the project
 COPY . .
+
+# Install Groot2 AppImage for live BehaviorTree.CPP visualization
+RUN chmod +x scripts/install_groot2.sh && \
+    scripts/install_groot2.sh
 
 # Ensure ubuntu user has audio and serial permissions
 RUN usermod -aG audio,dialout ubuntu
