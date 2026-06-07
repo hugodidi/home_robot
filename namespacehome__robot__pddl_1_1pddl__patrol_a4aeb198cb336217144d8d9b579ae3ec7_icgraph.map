@@ -1,0 +1,8 @@
+<map id="home_robot_pddl.pddl_patrol.make_pose" name="home_robot_pddl.pddl_patrol.make_pose">
+<area shape="rect" id="Node000001" title=" " alt="" coords="396,29,543,70"/>
+<area shape="rect" id="Node000002" href="$namespacehome__robot__pddl_1_1pddl__patrol.html#a8caa34c740fb3865eb6cac41b0d1a536" title="Send Nav2 goal, monitor for stuck/timeout, return True if succeeded." alt="" coords="201,29,348,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="380,52,349,52,349,47,380,47"/>
+<area shape="rect" id="Node000003" href="$namespacehome__robot__pddl_1_1pddl__patrol.html#a7ef7e0ba4dbb24a9678021d2cf41cfc6" title=" " alt="" coords="5,29,153,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,52,153,52,153,47,185,47"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="111,16,99,10,79,8,61,10,49,15,45,20,47,28,42,29,40,19,46,10,59,5,79,3,100,5,113,11"/>
+</map>

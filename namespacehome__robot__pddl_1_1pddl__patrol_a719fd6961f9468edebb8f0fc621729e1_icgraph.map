@@ -1,0 +1,6 @@
+<map id="home_robot_pddl.pddl_patrol.get_current_waypoint" name="home_robot_pddl.pddl_patrol.get_current_waypoint">
+<area shape="rect" id="Node000001" title="Return nearest symbolic waypoint from TF map&#45;&gt;base_link." alt="" coords="201,29,387,70"/>
+<area shape="rect" id="Node000002" href="$namespacehome__robot__pddl_1_1pddl__patrol.html#a7ef7e0ba4dbb24a9678021d2cf41cfc6" title=" " alt="" coords="5,29,153,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,52,153,52,153,47,185,47"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="114,16,101,10,79,8,59,10,46,15,42,20,44,28,38,29,36,19,43,10,57,5,79,3,102,5,116,11"/>
+</map>

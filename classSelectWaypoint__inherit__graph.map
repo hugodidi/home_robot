@@ -1,0 +1,5 @@
+<map id="SelectWaypoint" name="SelectWaypoint">
+<area shape="rect" id="Node000001" title=" " alt="" coords="10,120,132,206"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,136,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,86,73,120,68,120,68,86"/>
+</map>

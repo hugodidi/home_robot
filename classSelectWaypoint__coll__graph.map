@@ -1,0 +1,17 @@
+<map id="SelectWaypoint" name="SelectWaypoint">
+<area shape="rect" id="Node000001" title=" " alt="" coords="67,965,189,1052"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,828,136,894"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,907,114,964,109,966,86,909"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="160,828,355,894"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,896,178,954,174,951,227,892"/>
+<area shape="rect" id="Node000004" href="$structPatrolContext.html" title=" " alt="" coords="207,589,308,757"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="260,756,260,811,255,811,255,756"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="184,451,330,518"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="260,517,260,572,255,572,255,517"/>
+<area shape="rect" id="Node000006" href="$structWaypoint.html" title=" " alt="" coords="226,273,289,380"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="260,380,260,434,255,434,255,380"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="224,136,291,202"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="260,202,260,257,255,257,255,202"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="201,5,314,87"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="260,101,260,136,255,136,255,101"/>
+</map>

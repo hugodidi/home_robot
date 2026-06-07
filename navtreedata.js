@@ -30,7 +30,7 @@ var NAVTREE =
       [ "Requirements", "index.html#autotoc_md2", null ],
       [ "Quick start (Docker)", "index.html#autotoc_md3", null ],
       [ "Hardware (Arduino)", "index.html#autotoc_md4", null ],
-      [ "FSM Navigation (YASMIN)", "index.html#autotoc_md5", null ],
+      [ "Planning Systems", "index.html#autotoc_md5", null ],
       [ "🐳 Running with Docker (Recommended)", "md_docs_2commands.html#autotoc_md9", [
         [ "1. Start/Stop the System", "md_docs_2commands.html#autotoc_md10", null ],
         [ "2. Access the VNC Desktop", "md_docs_2commands.html#autotoc_md11", null ]
@@ -63,6 +63,14 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Hardware Components for Home Robot Arduino-based Hardware Interface", "md_docs_2hardware-components.html", null ],
+    [ "Patrol Planners", "md_docs_2planners.html", [
+      [ "Visualizers", "md_docs_2planners.html#autotoc_md38", null ],
+      [ "1. YASMIN FSM", "md_docs_2planners.html#autotoc_md39", null ],
+      [ "2. BehaviorTree.CPP", "md_docs_2planners.html#autotoc_md40", null ],
+      [ "3. PDDL (POPF)", "md_docs_2planners.html#autotoc_md41", null ],
+      [ "Comparison", "md_docs_2planners.html#autotoc_md42", null ],
+      [ "Typical Demo", "md_docs_2planners.html#autotoc_md43", null ]
+    ] ],
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [
@@ -78,7 +86,8 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -96,9 +105,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Dockerfile.html",
-"index.html#autotoc_md6"
+"classhome__robot__bt_1_1bt__patrol_1_1NavigateToWaypoint.html",
+"namespacehome__robot_1_1overhead__cam__service.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
-var LISTOFALLMEMBERS = 'List of all members';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

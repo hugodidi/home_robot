@@ -1,0 +1,5 @@
+<map id="home_robot_pddl.problem_generator.load_robot_speed" name="home_robot_pddl.problem_generator.load_robot_speed">
+<area shape="rect" id="Node000001" title="Read max linear velocity from Nav2 params (m/s)." alt="" coords="5,5,193,46"/>
+<area shape="rect" id="Node000002" href="$namespacehome__robot__pddl_1_1problem__generator.html#a944be4115855c380861f493f29719d49" title=" " alt="" coords="241,5,410,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,23,225,23,225,28,193,28"/>
+</map>

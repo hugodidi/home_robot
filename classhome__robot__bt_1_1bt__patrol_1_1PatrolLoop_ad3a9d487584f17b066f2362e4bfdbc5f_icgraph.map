@@ -1,0 +1,7 @@
+<map id="home_robot_bt.bt_patrol.PatrolLoop.reset" name="home_robot_bt.bt_patrol.PatrolLoop.reset">
+<area shape="rect" id="Node000001" title=" " alt="" coords="217,29,380,70"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="333,16,320,10,298,8,278,10,266,15,262,20,263,28,258,29,256,19,263,10,277,5,298,3,321,5,335,11"/>
+<area shape="rect" id="Node000002" href="$classhome__robot__bt_1_1bt__patrol_1_1PatrolLoop.html#a6ad2261bd146510d494f15f7d30bd01f" title=" " alt="" coords="5,29,169,70"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="201,52,169,52,169,47,201,47"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="121,16,109,10,87,8,67,10,55,15,50,20,52,28,47,29,45,19,52,10,66,5,87,3,110,5,124,11"/>
+</map>

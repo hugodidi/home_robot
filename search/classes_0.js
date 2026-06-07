@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['checkstuckstate_0',['CheckStuckState',['../classhome__robot__fsm_1_1fsm__patrol_1_1CheckStuckState.html',1,'home_robot_fsm::fsm_patrol']]]
+  ['backuprecovery_0',['BackUpRecovery',['../classBackUpRecovery.html',1,'BackUpRecovery'],['../classhome__robot__bt_1_1bt__patrol_1_1BackUpRecovery.html',1,'home_robot_bt.bt_patrol.BackUpRecovery']]],
+  ['behavior_1',['Behavior',['../classhome__robot__bt_1_1bt__patrol_1_1Behavior.html',1,'home_robot_bt::bt_patrol']]]
 ];

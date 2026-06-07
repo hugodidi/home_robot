@@ -1,0 +1,19 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classhome__robot__bt_1_1bt__patrol_1_1Behavior.html" title=" " alt="" coords="5,235,169,275"/>
+<area shape="rect" id="Node000001" href="$classhome__robot__bt_1_1bt__patrol_1_1BackUpRecovery.html" title=" " alt="" coords="217,5,380,46"/>
+<area shape="poly" id="edge10_Node000000_Node000001" title=" " alt="" coords="101,219,145,139,177,95,215,57,234,44,237,49,218,61,181,99,149,142,105,222"/>
+<area shape="rect" id="Node000002" href="$classhome__robot__bt_1_1bt__patrol_1_1Fallback.html" title=" " alt="" coords="217,71,380,111"/>
+<area shape="poly" id="edge11_Node000000_Node000002" title=" " alt="" coords="112,221,157,171,215,122,237,110,240,114,218,127,161,175,116,224"/>
+<area shape="rect" id="Node000003" href="$classhome__robot__bt_1_1bt__patrol_1_1HandleFailure.html" title=" " alt="" coords="217,136,380,177"/>
+<area shape="poly" id="edge12_Node000000_Node000003" title=" " alt="" coords="139,225,216,187,244,175,246,180,218,192,142,230"/>
+<area shape="rect" id="Node000004" href="$classhome__robot__bt_1_1bt__patrol_1_1NavigateToWaypoint.html" title=" " alt="" coords="217,201,380,242"/>
+<area shape="poly" id="edge13_Node000000_Node000004" title=" " alt="" coords="184,237,216,232,217,237,184,242"/>
+<area shape="rect" id="Node000005" href="$classhome__robot__bt_1_1bt__patrol_1_1PatrolLoop.html" title=" " alt="" coords="217,267,380,307"/>
+<area shape="poly" id="edge14_Node000000_Node000005" title=" " alt="" coords="184,267,217,272,216,277,184,272"/>
+<area shape="rect" id="Node000006" href="$classhome__robot__bt_1_1bt__patrol_1_1PublishArrival.html" title=" " alt="" coords="217,332,380,373"/>
+<area shape="poly" id="edge15_Node000000_Node000006" title=" " alt="" coords="143,280,218,317,246,329,244,334,216,321,141,285"/>
+<area shape="rect" id="Node000007" href="$classhome__robot__bt_1_1bt__patrol_1_1SelectWaypoint.html" title=" " alt="" coords="217,397,380,438"/>
+<area shape="poly" id="edge16_Node000000_Node000007" title=" " alt="" coords="116,286,161,335,218,382,240,395,238,399,215,387,158,339,112,289"/>
+<area shape="rect" id="Node000008" href="$classhome__robot__bt_1_1bt__patrol_1_1Sequence.html" title=" " alt="" coords="217,463,380,503"/>
+<area shape="poly" id="edge17_Node000000_Node000008" title=" " alt="" coords="105,288,149,367,181,410,218,448,237,460,234,464,215,452,177,414,145,370,101,291"/>
+</map>

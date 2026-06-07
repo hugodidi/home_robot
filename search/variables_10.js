@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['version_0',['version',['../namespacesetup.html#a2aa722b36a933088812b50ea79b97a5c',1,'setup']]],
-  ['vosk_5fmodel_1',['vosk_model',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#adc2d6764310bc7241fa00bd9f2cc2324',1,'home_robot::voice_controller::VoiceController']]],
-  ['vosk_5fmodel_5fpath_2',['vosk_model_path',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#a7cd8dc38bc6cbebca9b3f9120babaada',1,'home_robot::voice_controller::VoiceController']]]
+  ['script_5fdir_0',['SCRIPT_DIR',['../namespacehome__robot_1_1voice__controller.html#ac5d85c232d5c741e5ad9922a1972d84f',1,'home_robot::voice_controller']]],
+  ['send_5finterval_5fns_1',['send_interval_ns',['../classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html#a914a5f00ebfe32b9862adb89b0253291',1,'home_robot::lidar_grid_node::LidarGridNode']]],
+  ['ser_2',['ser',['../classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html#ae933934d3f94ed318628778780d70917',1,'home_robot::lidar_grid_node::LidarGridNode']]],
+  ['serial_5fenabled_3',['serial_enabled',['../classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html#ab01cd36bdd39606edbfee1356ae114b8',1,'home_robot::lidar_grid_node::LidarGridNode']]],
+  ['skip_5ferrors_4',['skip_errors',['../structPatrolContext.html#af3909e6a71690b22785e9767c0de4d7e',1,'PatrolContext']]],
+  ['srv_5',['srv',['../classhome__robot_1_1navigation__service_1_1NavigationService.html#a88f028db3f15e2efdd53ff6d953755f8',1,'home_robot.navigation_service.NavigationService.srv'],['../classhome__robot_1_1overhead__cam__service_1_1OverheadCamService.html#aa5cb8c0a091d61357cf91e2a9f8a5743',1,'home_robot.overhead_cam_service.OverheadCamService.srv']]],
+  ['start_5f_6',['start_',['../classBackUpRecovery.html#ab66cb6de8bd0d6a58ddc308b753c8f94',1,'BackUpRecovery']]],
+  ['start_5ftime_7',['start_time',['../classhome__robot__bt_1_1bt__patrol_1_1BackUpRecovery.html#a64cd56485ddb0ac32ce1c9ce3e866081',1,'home_robot_bt::bt_patrol::BackUpRecovery']]],
+  ['started_8',['started',['../classhome__robot__bt_1_1bt__patrol_1_1NavigateToWaypoint.html#a87983a18c61141a9822c024c7c14b784',1,'home_robot_bt::bt_patrol::NavigateToWaypoint']]],
+  ['stop_5fpatrol_9',['stop_patrol',['../namespacehome__robot_1_1execute__patrol.html#ac213e0bd2fe14bcec95fb8c18e3ca824',1,'home_robot.execute_patrol.stop_patrol'],['../namespacehome__robot__bt_1_1bt__patrol.html#af9bfaa88ba289641d58fab4b66c02ed8',1,'home_robot_bt.bt_patrol.stop_patrol'],['../namespacehome__robot__pddl_1_1pddl__patrol.html#a3a23905cf0cbb7a5de7762187a5636e4',1,'home_robot_pddl.pddl_patrol.stop_patrol']]],
+  ['stop_5fpub_10',['stop_pub',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#aaab7c1379a71244705e0bc75aa2a6ec1',1,'home_robot::voice_controller::VoiceController']]],
+  ['stuck_5fdist_5fthreshold_11',['stuck_dist_threshold',['../classhome__robot__bt_1_1bt__patrol_1_1NavigateToWaypoint.html#a71a1a215c9abcc2d6563f3ab3d7e9250',1,'home_robot_bt::bt_patrol::NavigateToWaypoint']]],
+  ['stuck_5ftimeout_12',['stuck_timeout',['../classhome__robot__bt_1_1bt__patrol_1_1NavigateToWaypoint.html#a68abef0a6594f16ea5f3131272c61fdc',1,'home_robot_bt::bt_patrol::NavigateToWaypoint']]],
+  ['sub_13',['sub',['../classhome__robot_1_1odom__to__tf_1_1OdomToTF.html#a6616a3de45913b08edec05a608f37cdc',1,'home_robot::odom_to_tf::OdomToTF']]],
+  ['subscription_14',['subscription',['../classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html#a5fa1f00584560af44465c99a303bbd74',1,'home_robot::lidar_grid_node::LidarGridNode']]],
+  ['success_15',['SUCCESS',['../classhome__robot__bt_1_1bt__patrol_1_1Status.html#a96b3b11a30eb631544fb223394d3f2d8',1,'home_robot_bt::bt_patrol::Status']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['grid_5fsize_0',['grid_size',['../classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html#a8d147875f9b547fba96d1fdbd03d5d51',1,'home_robot::lidar_grid_node::LidarGridNode']]]
+  ['failure_0',['FAILURE',['../classhome__robot__bt_1_1bt__patrol_1_1Status.html#a95d38138f24a34f412a48951d78cabf6',1,'home_robot_bt::bt_patrol::Status']]]
 ];

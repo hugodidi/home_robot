@@ -1,0 +1,5 @@
+<map id="NavigateToWaypoint::onStart" name="NavigateToWaypoint::onStart">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,147,46"/>
+<area shape="rect" id="Node000002" href="$bt__patrol_8cpp.html#a3f857aadcd59a3b965fd7b2d744caeed" title=" " alt="" coords="195,13,278,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,23,179,23,179,28,147,28"/>
+</map>

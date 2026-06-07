@@ -1,0 +1,17 @@
+<map id="PatrolLoop" name="PatrolLoop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="40,965,134,1052"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,828,126,894"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,909,84,965,78,966,70,910"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="150,828,346,894"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,896,148,956,144,952,211,892"/>
+<area shape="rect" id="Node000004" href="$structPatrolContext.html" title=" " alt="" coords="198,589,299,757"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="251,756,251,811,246,811,246,756"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="176,451,321,518"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="251,517,251,572,246,572,246,517"/>
+<area shape="rect" id="Node000006" href="$structWaypoint.html" title=" " alt="" coords="216,273,280,380"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="251,380,251,434,246,434,246,380"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="215,136,282,202"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="251,202,251,257,246,257,246,202"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="192,5,305,87"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="251,101,251,136,246,136,246,101"/>
+</map>

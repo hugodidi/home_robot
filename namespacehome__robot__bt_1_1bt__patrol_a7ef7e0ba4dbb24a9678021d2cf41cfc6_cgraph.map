@@ -1,0 +1,10 @@
+<map id="home_robot_bt.bt_patrol.main" name="home_robot_bt.bt_patrol.main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,63,197,88"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="59,64,51,54,56,44,73,38,101,36,132,39,148,46,146,51,131,44,101,41,74,43,59,48,56,53,63,60"/>
+<area shape="rect" id="Node000002" href="$namespacehome__robot__bt_1_1bt__patrol.html#a5cc54261e336b2f63af62ff22d36cdfd" title=" " alt="" coords="245,5,464,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,59,279,32,280,38,162,65"/>
+<area shape="rect" id="Node000003" href="$namespacehome__robot__bt_1_1bt__patrol.html#a699e11928987f150a137e632a0b99bd5" title=" " alt="" coords="261,55,448,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,73,245,73,245,78,197,78"/>
+<area shape="rect" id="Node000004" href="$namespacehome__robot__bt_1_1bt__patrol.html#ab83f8e4a3f128b1e9e131dc7d2be0e81" title=" " alt="" coords="261,120,448,161"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="154,86,259,114,258,119,153,91"/>
+</map>

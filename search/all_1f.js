@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🐳_20running_20with_20docker_20recommended_0',['🐳 Running with Docker (Recommended)',['../md_docs_2commands.html#autotoc_md9',1,'']]]
+  ['🎤_20voice_20control_20patrols_0',['🎤 Voice Control &amp;amp; Patrols',['../md_docs_2commands.html#autotoc_md17',1,'']]]
 ];

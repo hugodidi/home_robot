@@ -1,0 +1,6 @@
+<map id="home_robot_bt.bt_patrol.wait_for_nav2_action" name="home_robot_bt.bt_patrol.wait_for_nav2_action">
+<area shape="rect" id="Node000001" title=" " alt="" coords="245,22,432,62"/>
+<area shape="rect" id="Node000002" href="$namespacehome__robot__bt_1_1bt__patrol.html#a7ef7e0ba4dbb24a9678021d2cf41cfc6" title=" " alt="" coords="5,29,197,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,45,197,45,197,40,229,40"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="143,17,129,11,101,8,76,10,62,15,59,20,66,27,62,31,54,21,59,11,75,5,101,3,131,6,145,13"/>
+</map>

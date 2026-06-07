@@ -1,0 +1,5 @@
+<map id="home_robot_pddl.pddl_ui_server.UIStateSubscriber" name="home_robot_pddl.pddl_ui_server.UIStateSubscriber">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,120,186,221"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="75,5,116,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,86,98,120,93,120,93,86"/>
+</map>

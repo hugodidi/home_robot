@@ -1,7 +1,11 @@
 var searchData=
 [
   ['cell_5fsize_0',['cell_size',['../classhome__robot_1_1lidar__grid__node_1_1LidarGridNode.html#a3c94ef988c9cd7212450ddfc31acc79d',1,'home_robot::lidar_grid_node::LidarGridNode']]],
-  ['cmd_5fpub_1',['cmd_pub',['../classhome__robot__fsm_1_1fsm__patrol_1_1StuckRecoveryState.html#ae48a3ddac009057bf875f761fb3e7b87',1,'home_robot_fsm::fsm_patrol::StuckRecoveryState']]],
-  ['cmd_5fvel_5fpub_2',['cmd_vel_pub',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#a5cc5405e3757ed396b3c7eb22aa2a8ad',1,'home_robot::voice_controller::VoiceController']]],
-  ['cmd_5fvel_5fpub_5fglobal_3',['cmd_vel_pub_global',['../namespacehome__robot_1_1execute__patrol.html#ad6c878ea842c0724f7d4ca738ab0c3cc',1,'home_robot::execute_patrol']]]
+  ['child_1',['child',['../classhome__robot__bt_1_1bt__patrol_1_1PatrolLoop.html#a1e5cd060d04af29b1df1eaff5bb64623',1,'home_robot_bt::bt_patrol::PatrolLoop']]],
+  ['children_2',['children',['../classhome__robot__bt_1_1bt__patrol_1_1Sequence.html#a60843bb75936e6e75d6a0bc67bfa182f',1,'home_robot_bt.bt_patrol.Sequence.children'],['../classhome__robot__bt_1_1bt__patrol_1_1Fallback.html#af58dda55e82efeed89232127922122c3',1,'home_robot_bt.bt_patrol.Fallback.children']]],
+  ['cmd_5fpub_3',['cmd_pub',['../classhome__robot__fsm_1_1fsm__patrol_1_1StuckRecoveryState.html#ae48a3ddac009057bf875f761fb3e7b87',1,'home_robot_fsm::fsm_patrol::StuckRecoveryState']]],
+  ['cmd_5fvel_5fpub_4',['cmd_vel_pub',['../classhome__robot_1_1voice__controller_1_1VoiceController.html#a5cc5405e3757ed396b3c7eb22aa2a8ad',1,'home_robot.voice_controller.VoiceController.cmd_vel_pub'],['../classhome__robot__bt_1_1bt__patrol_1_1BackUpRecovery.html#ab3f7edc5261bd4f30c4324da42416bc1',1,'home_robot_bt.bt_patrol.BackUpRecovery.cmd_vel_pub'],['../structPatrolContext.html#a52c3b9bc71a69a56d47a73c72f5cd684',1,'PatrolContext::cmd_vel_pub']]],
+  ['cmd_5fvel_5fpub_5fglobal_5',['cmd_vel_pub_global',['../namespacehome__robot_1_1execute__patrol.html#ad6c878ea842c0724f7d4ca738ab0c3cc',1,'home_robot::execute_patrol']]],
+  ['context_5f_6',['context_',['../classSelectWaypoint.html#a5dab1e39393e3361df6931244590adad',1,'SelectWaypoint::context_'],['../classNavigateToWaypoint.html#ad0acb9af052abb59ff03d3a6a9cfe737',1,'NavigateToWaypoint::context_'],['../classBackUpRecovery.html#ab280a123a6886b0d5e3305f8a0b72e2b',1,'BackUpRecovery::context_'],['../classPublishArrival.html#a6be194d2a9d8583ed21807162328e2eb',1,'PublishArrival::context_'],['../classHandleFailure.html#a4133977328be4be1eff6df38955de251',1,'HandleFailure::context_'],['../classPatrolLoop.html#ad06326f4402029829b3ce7fc46a3cceb',1,'PatrolLoop::context_']]],
+  ['current_7',['current',['../structPatrolContext.html#a1d631abac0979ca8fe4965930def2e66',1,'PatrolContext']]]
 ];

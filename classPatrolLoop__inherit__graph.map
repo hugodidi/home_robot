@@ -1,0 +1,5 @@
+<map id="PatrolLoop" name="PatrolLoop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="18,120,113,206"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,126,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,86,68,120,63,120,63,86"/>
+</map>

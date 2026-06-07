@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['navigatestate_0',['NavigateState',['../classhome__robot__fsm_1_1fsm__patrol_1_1NavigateState.html',1,'home_robot_fsm::fsm_patrol']]],
-  ['navigationmanager_1',['NavigationManager',['../classhome__robot_1_1navigation__manager_1_1NavigationManager.html',1,'home_robot::navigation_manager']]],
-  ['navigationservice_2',['NavigationService',['../classhome__robot_1_1navigation__service_1_1NavigationService.html',1,'home_robot::navigation_service']]]
+  ['handleerrorstate_0',['HandleErrorState',['../classhome__robot__fsm_1_1fsm__patrol_1_1HandleErrorState.html',1,'home_robot_fsm::fsm_patrol']]],
+  ['handlefailure_1',['HandleFailure',['../classHandleFailure.html',1,'HandleFailure'],['../classhome__robot__bt_1_1bt__patrol_1_1HandleFailure.html',1,'home_robot_bt.bt_patrol.HandleFailure']]],
+  ['handler_2',['Handler',['../classhome__robot__pddl_1_1pddl__ui__server_1_1Handler.html',1,'home_robot_pddl::pddl_ui_server']]]
 ];
